@@ -229,6 +229,26 @@ html.request-open{overflow:hidden}
 @media(max-width:1300px){#restaurant .restaurant-inner{margin:0 36px;gap:40px}#restaurant .restaurant-photo img{height:570px}#restaurant h2{font-size:46px}}
 @media(max-width:700px){#restaurant{padding:48px 0 52px}#restaurant .restaurant-inner{display:flex;flex-direction:column;align-items:stretch;margin:0 22px;gap:0}#restaurant .restaurant-copy{display:contents}#restaurant h2{font-size:34px;margin:0 0 25px;order:1}#restaurant .restaurant-photo{order:2;margin-bottom:25px}#restaurant .restaurant-photo img{height:auto;aspect-ratio:1.15;object-fit:cover}#restaurant .restaurant-photo figcaption{font-size:13px;margin-top:10px}#restaurant .restaurant-details{order:3}#restaurant .restaurant-lead{font-size:17px;line-height:1.75;margin-bottom:15px}#restaurant .restaurant-description{font-size:15px;margin-bottom:24px}#restaurant .button{width:100%}#restaurant .restaurant-kids{margin-top:28px;padding-top:24px}#restaurant .restaurant-kids h3{font-size:21px}}
 
+#winter-recreation{background:linear-gradient(145deg,var(--deep),var(--text));color:var(--paper);padding:76px 0 80px;scroll-margin-top:24px}
+#winter-recreation .winter-inner{max-width:1250px;margin:auto}
+#winter-recreation .winter-heading{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:end;margin-bottom:36px}
+#winter-recreation h2{font-size:46px;line-height:1.15;letter-spacing:-.04em;color:var(--paper);margin:0}
+#winter-recreation .winter-heading p{font-size:17px;line-height:1.8;color:var(--cream);max-width:450px;margin:0 0 4px}
+#winter-recreation .winter-photo{margin:0}
+#winter-recreation .winter-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:13px}
+#winter-recreation .winter-photo figcaption{font-size:13px;line-height:1.7;color:var(--cream);margin-top:13px}
+#winter-recreation .winter-activities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;margin-top:32px}
+#winter-recreation .winter-activities article{padding-top:22px;border-top:1px solid var(--green)}
+#winter-recreation .winter-activities h3{font-size:23px;line-height:1.3;letter-spacing:-.02em;color:var(--paper);margin:0 0 14px}
+#winter-recreation .winter-activities p{font-size:16px;line-height:1.8;color:var(--cream);margin:0;max-width:340px}
+#winter-recreation .winter-planning{margin-top:36px;background:var(--cream);color:var(--text);border-radius:13px;padding:28px 32px;display:flex;justify-content:space-between;gap:35px;align-items:center}
+#winter-recreation .winter-planning h3{font-size:21px;line-height:1.3;letter-spacing:-.02em;color:var(--deep);margin:0 0 10px}
+#winter-recreation .winter-planning p{font-size:15px;line-height:1.8;color:var(--muted);max-width:670px;margin:0 0 12px}
+#winter-recreation .winter-phone{font-size:15px;line-height:1.8;color:var(--green);text-underline-offset:4px;display:inline-block;padding:3px 0}
+#winter-recreation .winter-planning .button{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+@media(max-width:1300px){#winter-recreation .winter-inner{margin:0 36px}#winter-recreation .winter-heading{gap:40px}}
+@media(max-width:700px){#winter-recreation{padding:48px 0 52px}#winter-recreation .winter-inner{margin:0 22px}#winter-recreation .winter-heading{display:block;margin-bottom:26px}#winter-recreation h2{font-size:34px}#winter-recreation .winter-heading p{font-size:16px;line-height:1.8;margin:22px 0 0}#winter-recreation .winter-photo figcaption{margin-top:11px;font-size:13px}#winter-recreation .winter-activities{grid-template-columns:1fr;gap:23px;margin-top:27px}#winter-recreation .winter-activities article{padding-top:20px}#winter-recreation .winter-activities h3{font-size:22px;margin-bottom:12px}#winter-recreation .winter-activities p{font-size:16px;max-width:none}#winter-recreation .winter-planning{margin-top:28px;padding:24px 22px;display:block}#winter-recreation .winter-planning h3{font-size:21px}#winter-recreation .winter-planning p{font-size:15px}#winter-recreation .winter-phone{font-size:14px}#winter-recreation .winter-planning .button{width:100%;margin-top:22px;padding:12px 14px;font-size:14px}}
+
 .holiday-menu .menu-top{max-width:1250px;margin:auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .holiday-menu .menu-logo{width:100px;height:74px;object-fit:contain}
 .holiday-menu .menu-top-actions{display:flex;align-items:center;gap:25px}
