@@ -95,6 +95,18 @@
   </div>
   <div class="stay-booking"><p>Посмотрите цены и свободные номера и коттеджи на ваши даты в форме бронирования.</p><a class="button" href="#booking">Выбрать даты</a></div>
 </section>
+<section id="territory" aria-labelledby="territory-title">
+  <div class="territory-inner">
+    <div class="territory-story"><p class="territory-eyebrow">Вокруг вашего номера или коттеджа</p><h2 id="territory-title">На территории<br>«Дубравы»</h2><p class="territory-lead">Гостиница и коттеджи среди деревьев, дорожки для прогулок. Выйдите из дома, чтобы провести время в зимнем парке.</p><figure class="territory-photo"><img src="assets/territory-winter-warm-v1.webp" srcset="assets/territory-winter-small-warm-v1.webp 640w, assets/territory-winter-warm-v1.webp 1280w" sizes="(max-width:750px) calc(100vw - 44px), (max-width:1300px) 40vw, 490px" width="1280" height="853" alt="Заснеженные деревья, дорожка и здание на территории Дубравы" loading="lazy"><figcaption>Зимний парк «Дубравы»</figcaption></figure></div>
+    <figure class="territory-map"><h3>Карта территории</h3><p>Гостиница в центре схемы, коттеджи слева, ресторан справа.</p><a class="territory-map-link" href="assets/territory-map.jpg" target="_blank" rel="noopener" data-map-open aria-haspopup="dialog" aria-controls="territory-map-dialog"><div class="territory-map-crop"><img src="assets/territory-map.jpg" width="1280" height="905" alt="Схема территории Дубравы с гостиницей, рестораном, дорожками и номерами коттеджей" loading="lazy"></div><span>Открыть карту крупно <span aria-hidden="true">↗</span></span></a><figcaption>Увеличьте схему, чтобы рассмотреть дорожки и расположение коттеджей.</figcaption></figure>
+  </div>
+  <dialog id="territory-map-dialog" aria-labelledby="territory-map-title" aria-describedby="territory-map-help">
+    <div class="territory-map-header"><h3 id="territory-map-title">Карта территории «Дубравы»</h3><button type="button" class="territory-map-close" aria-label="Закрыть карту" data-map-close autofocus>×</button></div>
+    <div class="territory-map-tools"><div class="territory-map-zoom"><button type="button" data-map-minus aria-label="Уменьшить карту" disabled>−</button><output data-map-level aria-live="polite">100%</output><button type="button" data-map-plus aria-label="Увеличить карту">+</button></div><button type="button" data-map-reset>Весь план</button><a href="assets/territory-map.jpg" download>Скачать карту</a></div>
+    <p id="territory-map-help">Увеличьте схему кнопкой «+». Перемещайте увеличенную карту прокруткой или пальцем.</p>
+    <div class="territory-map-viewport" tabindex="0" role="region" aria-label="Карта территории с прокруткой"><div class="territory-map-canvas"><img src="assets/territory-map.jpg" width="1280" height="905" alt="Полная схема территории: гостиница в центре, ресторан справа и коттеджи слева"></div></div>
+  </dialog>
+</section>
 <details class="structure"><summary>Согласованная структура будущего лендинга</summary><p>Это общий порядок разделов. Полное наполнение и вёрстка остальных экранов ещё согласуются.</p><ol><li>Обложка отеля</li><li>Встроенное бронирование TravelLine</li><li>Новогодний экспресс 2027</li><li>Программа праздников, меню и каникулы</li><li>Номера и коттеджи</li><li>Территория отеля и карта территории</li><li>Русская баня, хамам и сауна</li><li>Ресторан и меню ресторана</li><li>Фотографии отеля</li><li>Вопросы перед поездкой</li><li>Как добраться: карта проезда, маршрут и контакты</li></ol></details></main><footer id="contact" class="footer"><p>Прототип оформления. Новогодние цены подтверждены 10.11.2026. Домен отеля пока не меняется.</p><a href="tel:+78469799595">8 (846) 979-95-95</a><a href="https://vk.ru/parkhoteldubrava" target="_blank" rel="noopener">ВКонтакте</a><a href="index.html">Сравнить варианты</a></footer><dialog id="request-dialog" aria-labelledby="request-title" aria-describedby="request-lead request-preview">
   <div class="request-header"><h2 id="request-title" tabindex="-1">Заявка на Новый год</h2><button class="request-close" type="button" aria-label="Закрыть форму заявки">Закрыть</button></div>
   <p id="request-lead">Оставьте телефон. Менеджер свяжется с вами и уточнит условия.</p>
@@ -122,4 +134,4 @@
     <p class="request-footnote">Заявка не является подтверждением бронирования.</p>
   </form>
 </dialog>
-<script src="booking/search.js"></script><script src="request.js"></script><script src="stay.js"></script></body></html>
+<script src="booking/search.js"></script><script src="request.js"></script><script src="stay.js"></script><script src="territory.js"></script></body></html>
