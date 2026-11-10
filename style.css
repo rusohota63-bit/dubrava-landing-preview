@@ -88,3 +88,61 @@ html.request-open{overflow:hidden}
 #request-dialog .request-submit:disabled::after{display:none}
 #request-dialog .request-footnote{font-size:12px;line-height:1.6;color:var(--muted);margin-top:16px;text-align:center}
 @media(max-width:600px){#request-dialog{padding:22px 18px;border-radius:14px}#request-dialog h2{font-size:27px}#request-dialog .request-header{gap:12px}#request-dialog .request-close{font-size:12px;padding:9px;min-height:44px}#request-dialog #request-lead{font-size:14px}#request-dialog .request-fields{grid-template-columns:1fr;gap:16px}#request-dialog #request-guests{max-width:none}#request-dialog .request-summary{font-size:14px}#request-dialog .request-consent{font-size:13px}}
+
+#holiday-program{max-width:1250px;margin:0 auto;padding:76px 0 60px;color:var(--text)}
+#holiday-program .hp-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:36px}
+#holiday-program h2{font-size:46px;line-height:1.1;color:var(--deep);letter-spacing:-.045em}
+#holiday-program .hp-heading>p{max-width:430px;font-size:16px;line-height:1.7;color:var(--muted)}
+#holiday-program .hp-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:65px;align-items:start}
+#holiday-program .hp-days{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+#holiday-program .hp-days li{display:grid;grid-template-columns:86px 1fr;gap:24px;padding:25px 0;border-bottom:1px solid var(--line)}
+#holiday-program time{display:block;font-size:13px;line-height:1.3;color:var(--green)}
+#holiday-program time span{display:block;font-size:42px;line-height:1.05;letter-spacing:-.04em;font-weight:500;margin-bottom:6px}
+#holiday-program h3{font-size:23px;line-height:1.2;letter-spacing:-.025em}
+#holiday-program .hp-days p{font-size:15px;line-height:1.75;color:var(--muted);margin-top:11px}
+#holiday-program .hp-days .hp-time{color:var(--green);font-weight:600;margin-top:12px}
+#holiday-program .hp-days .hp-included{color:var(--green);font-size:13px}
+#holiday-program .hp-menu{padding:30px;background:var(--cream);border-radius:15px}
+#holiday-program .hp-menu-caption{font-size:13px;color:var(--green);margin-bottom:18px}
+#holiday-program .hp-menu h3{font-size:35px;line-height:1.12;letter-spacing:-.04em;color:var(--deep)}
+#holiday-program .hp-menu>p:not(.hp-menu-caption){font-size:15px;line-height:1.8;color:var(--muted);margin-top:20px}
+#holiday-program .hp-menu-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px;margin-top:28px}
+#holiday-program .hp-children{margin-top:40px;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1.1fr 1.2fr 1fr;gap:35px;align-items:start}
+#holiday-program .hp-children h3{font-size:23px;color:var(--deep)}
+#holiday-program .hp-children p{font-size:14px;line-height:1.75;color:var(--muted);margin-top:12px}
+#holiday-program dl{margin:0}
+#holiday-program dl>div+div{margin-top:18px}
+#holiday-program dt{font-size:13px;color:var(--muted);margin-bottom:5px}
+#holiday-program dd{margin:0;font-size:24px;line-height:1.3;font-weight:550;color:var(--green)}
+#holiday-program dd span{display:block;font-size:12px;line-height:1.6;font-weight:400;color:var(--muted);margin-top:2px}
+#holiday-program .hp-younger p{margin-top:0}
+#holiday-program .hp-younger button{font:inherit;font-size:13px;line-height:1.6;cursor:pointer;background:none;border:0;color:var(--green);text-align:left;padding:0;margin-top:15px;text-decoration:underline;text-underline-offset:4px;min-height:36px}
+#holiday-program .hp-january{display:grid;grid-template-columns:1fr 1.4fr auto;gap:30px;align-items:center;padding-top:32px}
+#holiday-program .hp-january h3{font-size:22px;color:var(--deep)}
+#holiday-program .hp-january p{font-size:14px;line-height:1.75;color:var(--muted)}
+@media(max-width:1300px){#holiday-program{margin:0 36px}}
+@media(max-width:900px){#holiday-program .hp-layout{gap:30px;grid-template-columns:1.3fr 1fr}#holiday-program .hp-days li{grid-template-columns:65px 1fr;gap:18px}#holiday-program .hp-menu{padding:25px}#holiday-program .hp-children{grid-template-columns:1fr 1fr;gap:25px}#holiday-program .hp-younger{grid-column:1/3}#holiday-program .hp-january{grid-template-columns:1fr 1.5fr}#holiday-program .hp-january .link{grid-column:2}}
+@media(max-width:650px){#holiday-program{margin:0 22px;padding:44px 0 30px}#holiday-program .hp-heading{display:block;margin-bottom:26px}#holiday-program h2{font-size:34px}#holiday-program .hp-heading>p{font-size:14px;margin-top:18px}#holiday-program .hp-layout{grid-template-columns:1fr;gap:28px}#holiday-program .hp-days li{padding:22px 0;grid-template-columns:57px 1fr;gap:18px}#holiday-program time{font-size:12px}#holiday-program time span{font-size:36px}#holiday-program h3{font-size:21px}#holiday-program .hp-days p{font-size:14px;line-height:1.7}#holiday-program .hp-menu{padding:26px}#holiday-program .hp-menu h3{font-size:31px}#holiday-program .hp-menu>p:not(.hp-menu-caption){font-size:14px}#holiday-program .hp-menu-actions{gap:20px}#holiday-program .hp-menu-actions .button{width:100%}#holiday-program .hp-children{grid-template-columns:1fr;margin-top:28px;padding:28px 0;gap:22px}#holiday-program .hp-children h3{font-size:23px}#holiday-program .hp-younger{grid-column:auto}#holiday-program .hp-younger button{font-size:14px}#holiday-program .hp-january{display:block;padding-top:27px}#holiday-program .hp-january h3{font-size:23px}#holiday-program .hp-january p{margin-top:14px;font-size:14px}#holiday-program .hp-january .link{display:inline-block;margin-top:18px;font-size:14px}}
+
+.holiday-menu .menu-top{max-width:1250px;margin:auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.holiday-menu .menu-logo{width:100px;height:74px;object-fit:contain}
+.holiday-menu .menu-top-actions{display:flex;align-items:center;gap:25px}
+.holiday-menu .menu-content{max-width:1100px;margin:auto;padding:35px 0 60px}
+.holiday-menu .menu-intro h1{font-size:55px;line-height:1.1;color:var(--deep);letter-spacing:-.045em}
+.holiday-menu .menu-intro p{font-size:17px;line-height:1.8;max-width:650px;color:var(--muted);margin-top:20px}
+.holiday-menu .menu-nav{position:sticky;top:0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 28px;padding:18px 0;margin:30px 0 0;z-index:1}
+.holiday-menu .menu-nav a{font-size:14px;color:var(--green);text-decoration:underline;text-underline-offset:4px}
+.holiday-menu .menu-block{padding-top:45px;scroll-margin-top:85px}
+.holiday-menu .menu-block h2{font-size:35px;color:var(--deep);line-height:1.15;letter-spacing:-.035em;margin-bottom:28px}
+.holiday-menu .menu-category{margin:0 0 30px;max-width:900px}
+.holiday-menu .menu-category h3{font-size:21px;line-height:1.2;color:var(--green);letter-spacing:-.02em;margin-bottom:14px}
+.holiday-menu .menu-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:start;border-top:1px solid var(--line);padding:14px 0}
+.holiday-menu .menu-item h4{font-size:16px;line-height:1.6;font-weight:600;margin:0}
+.holiday-menu .menu-item p{font-size:14px;line-height:1.75;color:var(--muted);max-width:700px;margin-top:5px}
+.holiday-menu .menu-portion{font-size:13px;line-height:1.8;color:var(--muted);white-space:nowrap;text-align:right}
+.holiday-menu .menu-price{display:block;color:var(--green);font-size:17px;font-weight:600;margin-top:4px}
+.holiday-menu .menu-bottom{max-width:1100px;margin:0 auto 45px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:25px;align-items:center}
+.holiday-menu .menu-bottom p{font-size:14px;color:var(--muted);line-height:1.7;max-width:560px}
+@media(max-width:1300px){.holiday-menu .menu-top{margin:0 30px}.holiday-menu .menu-content,.holiday-menu .menu-bottom{margin-left:36px;margin-right:36px}}
+@media(max-width:600px){.holiday-menu .menu-top{margin:0 20px;padding:16px 0;gap:18px}.holiday-menu .menu-logo{width:82px;height:62px}.holiday-menu .menu-top-actions{gap:15px;flex-direction:column;align-items:flex-end}.holiday-menu .menu-top .button{font-size:12px;min-height:44px;padding:10px 14px}.holiday-menu .menu-top .link{font-size:12px}.holiday-menu .menu-content{margin:0 22px;padding:20px 0 35px}.holiday-menu .menu-intro h1{font-size:38px}.holiday-menu .menu-intro p{font-size:15px;margin-top:19px}.holiday-menu .menu-nav{gap:12px 20px;padding:16px 0;margin-top:24px}.holiday-menu .menu-nav a{font-size:13px}.holiday-menu .menu-block{padding-top:32px;scroll-margin-top:110px}.holiday-menu .menu-block h2{font-size:29px;margin-bottom:24px}.holiday-menu .menu-category h3{font-size:20px}.holiday-menu .menu-item{gap:12px;padding:13px 0}.holiday-menu .menu-item h4{font-size:15px}.holiday-menu .menu-item p{font-size:14px}.holiday-menu .menu-portion{font-size:12px}.holiday-menu .menu-price{font-size:15px}.holiday-menu .menu-bottom{display:block;margin:0 22px 30px}.holiday-menu .menu-bottom .link{display:inline-block;margin-top:20px;font-size:14px}}
+@media print{.holiday-menu .draft,.holiday-menu .menu-top-actions,.holiday-menu .menu-nav,.holiday-menu .menu-bottom,#request-dialog{display:none!important}.holiday-menu .menu-content{max-width:none;margin:0;padding:0}.holiday-menu .menu-block{break-before:page;padding-top:0}.holiday-menu .menu-item{break-inside:avoid}.holiday-menu .menu-intro{margin-bottom:30px}.holiday-menu .menu-block:first-of-type{break-before:auto}}
