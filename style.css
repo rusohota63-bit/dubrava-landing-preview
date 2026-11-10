@@ -210,6 +210,22 @@ html.request-open{overflow:hidden}
 @media(max-width:900px){#bathhouse .bath-options{gap:26px}#bathhouse .bath-booking{gap:25px}#bathhouse .bath-detail img{width:130px}}
 @media(max-width:650px){#bathhouse{padding:40px 22px 45px}#bathhouse .bath-heading{display:block;margin-bottom:29px}#bathhouse h2{font-size:34px}#bathhouse .bath-heading>p{font-size:14px;margin-top:18px}#bathhouse .bath-options{grid-template-columns:1fr;gap:34px}#bathhouse .bath-photo img{border-radius:13px}#bathhouse .bath-photo figcaption{font-size:12px}#bathhouse h3{font-size:25px}#bathhouse .bath-location{margin-top:20px}#bathhouse .bath-description{font-size:14px;margin-top:14px}#bathhouse .bath-detail{gap:17px;margin-top:20px}#bathhouse .bath-detail img{width:125px}#bathhouse .bath-detail figcaption{font-size:12px}#bathhouse .bath-booking{display:block;margin-top:30px;padding-top:26px}#bathhouse .bath-booking h3{font-size:23px}#bathhouse .bath-booking p{font-size:14px}#bathhouse .bath-booking button{width:100%;margin-top:23px;padding-left:12px;padding-right:12px}}
 
+#restaurant{background:var(--paper);padding:88px 0 92px;scroll-margin-top:24px}
+#restaurant .restaurant-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:64px;align-items:center}
+#restaurant .restaurant-photo{margin:0;min-width:0}
+#restaurant .restaurant-photo img{display:block;width:100%;height:610px;object-fit:cover;object-position:50% 50%;border-radius:13px}
+#restaurant .restaurant-photo figcaption{font-size:13px;line-height:1.7;color:var(--muted);margin-top:13px}
+#restaurant h2{font-size:46px;line-height:1.1;letter-spacing:-.045em;color:var(--deep);margin:0 0 28px}
+#restaurant .restaurant-lead{font-size:19px;line-height:1.7;color:var(--text);margin:0 0 16px;max-width:430px}
+#restaurant .restaurant-description{font-size:15px;line-height:1.8;color:var(--muted);margin:0 0 27px;max-width:430px}
+#restaurant .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px}
+#restaurant .restaurant-kids{margin-top:35px;padding-top:25px;border-top:1px solid var(--line)}
+#restaurant .restaurant-kids h3{font-size:21px;line-height:1.3;color:var(--deep);margin:0 0 12px;letter-spacing:-.02em}
+#restaurant .restaurant-kids p{font-size:15px;line-height:1.8;color:var(--muted);margin:0 0 16px;max-width:420px}
+#restaurant .restaurant-kids .link{font-size:14px;display:inline-block;padding:4px 0}
+@media(max-width:1300px){#restaurant .restaurant-inner{margin:0 36px;gap:40px}#restaurant .restaurant-photo img{height:570px}#restaurant h2{font-size:46px}}
+@media(max-width:700px){#restaurant{padding:48px 0 52px}#restaurant .restaurant-inner{display:flex;flex-direction:column;align-items:stretch;margin:0 22px;gap:0}#restaurant .restaurant-copy{display:contents}#restaurant h2{font-size:34px;margin:0 0 25px;order:1}#restaurant .restaurant-photo{order:2;margin-bottom:25px}#restaurant .restaurant-photo img{height:auto;aspect-ratio:1.15;object-fit:cover}#restaurant .restaurant-photo figcaption{font-size:13px;margin-top:10px}#restaurant .restaurant-details{order:3}#restaurant .restaurant-lead{font-size:17px;line-height:1.75;margin-bottom:15px}#restaurant .restaurant-description{font-size:15px;margin-bottom:24px}#restaurant .button{width:100%}#restaurant .restaurant-kids{margin-top:28px;padding-top:24px}#restaurant .restaurant-kids h3{font-size:21px}}
+
 .holiday-menu .menu-top{max-width:1250px;margin:auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .holiday-menu .menu-logo{width:100px;height:74px;object-fit:contain}
 .holiday-menu .menu-top-actions{display:flex;align-items:center;gap:25px}
@@ -232,3 +248,28 @@ html.request-open{overflow:hidden}
 @media(max-width:1300px){.holiday-menu .menu-top{margin:0 30px}.holiday-menu .menu-content,.holiday-menu .menu-bottom{margin-left:36px;margin-right:36px}}
 @media(max-width:600px){.holiday-menu .menu-top{margin:0 20px;padding:16px 0;gap:18px}.holiday-menu .menu-logo{width:82px;height:62px}.holiday-menu .menu-top-actions{gap:15px;flex-direction:column;align-items:flex-end}.holiday-menu .menu-top .button{font-size:12px;min-height:44px;padding:10px 14px}.holiday-menu .menu-top .link{font-size:12px}.holiday-menu .menu-content{margin:0 22px;padding:20px 0 35px}.holiday-menu .menu-intro h1{font-size:38px}.holiday-menu .menu-intro p{font-size:15px;margin-top:19px}.holiday-menu .menu-nav{gap:12px 20px;padding:16px 0;margin-top:24px}.holiday-menu .menu-nav a{font-size:13px}.holiday-menu .menu-block{padding-top:32px;scroll-margin-top:110px}.holiday-menu .menu-block h2{font-size:29px;margin-bottom:24px}.holiday-menu .menu-category h3{font-size:20px}.holiday-menu .menu-item{gap:12px;padding:13px 0}.holiday-menu .menu-item h4{font-size:15px}.holiday-menu .menu-item p{font-size:14px}.holiday-menu .menu-portion{font-size:12px}.holiday-menu .menu-price{font-size:15px}.holiday-menu .menu-bottom{display:block;margin:0 22px 30px}.holiday-menu .menu-bottom .link{display:inline-block;margin-top:20px;font-size:14px}}
 @media print{.holiday-menu .draft,.holiday-menu .menu-top-actions,.holiday-menu .menu-nav,.holiday-menu .menu-bottom,#request-dialog{display:none!important}.holiday-menu .menu-content{max-width:none;margin:0;padding:0}.holiday-menu .menu-block{break-before:page;padding-top:0}.holiday-menu .menu-item{break-inside:avoid}.holiday-menu .menu-intro{margin-bottom:30px}.holiday-menu .menu-block:first-of-type{break-before:auto}}
+
+.restaurant-menu .food-header{max-width:1250px;margin:auto;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.restaurant-menu .food-header img{width:100px;height:74px;object-fit:contain}
+.restaurant-menu .food-content{max-width:1000px;margin:auto;padding:35px 0 60px}
+.restaurant-menu .food-intro h1{font-size:55px;line-height:1.1;letter-spacing:-.045em;color:var(--deep);margin:0 0 20px}
+.restaurant-menu .food-intro p{font-size:17px;line-height:1.8;color:var(--muted);max-width:610px;margin:0 0 20px}
+.restaurant-menu .food-intro .link{font-size:15px;display:inline-block;padding:8px 0}
+.restaurant-menu .food-navigation{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:30px;padding:18px 0}
+.restaurant-menu .food-navigation summary{cursor:pointer;font-size:17px;font-weight:600;color:var(--deep);padding:6px 0}
+.restaurant-menu .food-navigation nav{display:flex;flex-wrap:wrap;gap:9px 24px;padding-top:14px}
+.restaurant-menu .food-navigation a{display:inline-block;font-size:14px;color:var(--green);text-underline-offset:4px;padding:8px 0;min-height:40px}
+.restaurant-menu .food-group{padding-top:44px;scroll-margin-top:24px}
+.restaurant-menu .food-group h2{font-size:30px;color:var(--deep);line-height:1.25;letter-spacing:-.035em;margin:0 0 24px;max-width:780px}
+.restaurant-menu .dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;border-top:1px solid var(--line);padding:16px 0}
+.restaurant-menu .dish h3{font-size:16px;line-height:1.7;font-weight:600;margin:0;max-width:730px}
+.restaurant-menu .dish p{font-size:14px;line-height:1.8;color:var(--muted);margin:5px 0 0;max-width:650px}
+.restaurant-menu .dish-values{text-align:right;color:var(--muted);font-size:13px;line-height:1.8}
+.restaurant-menu .dish-values span{display:block;white-space:nowrap}
+.restaurant-menu .dish-values strong{display:block;color:var(--green);font-size:17px;font-weight:600;white-space:nowrap;margin-top:4px}
+.restaurant-menu .food-bottom{margin-top:35px;padding-top:25px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.restaurant-menu .food-bottom p{font-size:14px;line-height:1.8;color:var(--muted);width:100%;margin:0}
+@media(max-width:1300px){.restaurant-menu .food-header{margin:0 36px}.restaurant-menu .food-content{margin:0 36px}}
+@media(max-width:600px){.restaurant-menu .food-header{margin:0 22px;padding:18px 0;gap:18px}.restaurant-menu .food-header img{width:82px;height:62px}.restaurant-menu .food-header .link{font-size:13px}.restaurant-menu .food-content{margin:0 22px;padding:24px 0 40px}.restaurant-menu .food-intro h1{font-size:38px}.restaurant-menu .food-intro p{font-size:15px}.restaurant-menu .food-navigation{margin-top:24px}.restaurant-menu .food-navigation nav{gap:6px 20px}.restaurant-menu .food-group{padding-top:35px}.restaurant-menu .food-group h2{font-size:28px;margin-bottom:22px}.restaurant-menu .dish{gap:12px;padding:14px 0}.restaurant-menu .dish h3{font-size:15px;line-height:1.7}.restaurant-menu .dish-values{font-size:13px}.restaurant-menu .dish-values strong{font-size:15px}.restaurant-menu .dish p{font-size:14px}.restaurant-menu .food-bottom .link{font-size:14px}}
+@media(max-width:360px){.restaurant-menu .dish{grid-template-columns:minmax(0,1fr)}.restaurant-menu .dish-values{display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left}.restaurant-menu .dish-values strong{margin:0}}
+@media print{.restaurant-menu .draft,.restaurant-menu .food-header,.restaurant-menu .food-navigation,.restaurant-menu .food-intro .link,.restaurant-menu .food-bottom{display:none}.restaurant-menu .food-content{max-width:none;margin:0;padding:0}.restaurant-menu .dish{break-inside:avoid}.restaurant-menu .food-group h2{break-after:avoid}}
