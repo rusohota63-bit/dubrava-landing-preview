@@ -163,8 +163,8 @@ html.request-open{overflow:hidden}
 #territory .territory-map h3{font-size:28px;line-height:1.2;color:var(--deep);letter-spacing:-.035em}
 #territory .territory-map>p{font-size:14px;line-height:1.75;color:var(--muted);margin-top:15px;max-width:410px}
 #territory .territory-map-link{display:block;margin-top:22px;border-radius:8px}
-#territory .territory-map-crop{aspect-ratio:2/1;overflow:hidden;background:var(--paper)}
-#territory .territory-map-crop img{height:auto;transform:translateY(-16%);object-fit:contain}
+#territory .territory-map-crop{aspect-ratio:1264/848;overflow:hidden;background:var(--paper);border-radius:8px}
+#territory .territory-map-crop img{height:auto;object-fit:contain}
 #territory .territory-map-link>span{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0 12px;border-bottom:1px solid var(--line);font-size:14px;font-weight:600;color:var(--green)}
 #territory .territory-map-link:hover>span{color:var(--deep);border-color:var(--green)}
 #territory .territory-map>figcaption{font-size:12px;line-height:1.65;color:var(--muted);margin-top:16px;max-width:420px}

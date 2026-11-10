@@ -5,6 +5,7 @@
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const viewport = dialog.querySelector('.territory-map-viewport');
   const canvas = dialog.querySelector('.territory-map-canvas');
+  const map = canvas.querySelector('img');
   const minus = dialog.querySelector('[data-map-minus]');
   const plus = dialog.querySelector('[data-map-plus]');
   const level = dialog.querySelector('[data-map-level]');
@@ -12,7 +13,8 @@
   let oldOverflow = '';
   let opener;
   function fit() {
-    const width = Math.min(viewport.clientWidth, viewport.clientHeight * 1280 / 905);
+    const ratio = (map.naturalWidth || map.width) / (map.naturalHeight || map.height);
+    const width = Math.min(viewport.clientWidth, viewport.clientHeight * ratio);
     canvas.style.setProperty('--map-base-width', width + 'px');
   }
   function zoom(value) {
