@@ -313,6 +313,34 @@ html.request-open{overflow:hidden}
 @media(max-width:900px){#hotel-photos .hotel-photos-inner{grid-template-columns:220px minmax(0,1fr);gap:28px}#hotel-photos .hotel-photos-copy{padding-top:10px}#hotel-photos h2{font-size:34px}#hotel-photos .hotel-album-thumbs{gap:8px}}
 @media(max-width:700px){#hotel-photos{padding:48px 0 52px}#hotel-photos .hotel-photos-inner{margin:0 22px;display:block}#hotel-photos .hotel-photos-copy{padding-top:0;margin-bottom:28px}#hotel-photos h2{font-size:34px;margin-bottom:22px}#hotel-photos .hotel-photos-copy p{font-size:16px;max-width:none;margin-bottom:18px}#hotel-photos .hotel-photos-copy .link{font-size:16px}#hotel-photos .hotel-album-zoom{right:10px;bottom:10px;padding:7px 10px;font-size:13px}#hotel-photos .hotel-album-stage figcaption{font-size:16px;margin:14px 0 16px;gap:12px}#hotel-photos .hotel-album-thumbs{gap:7px}#hotel-photos .hotel-album-thumbs a{padding:2px;border-width:2px}#hotel-photos .hotel-album-hint{font-size:14px;margin-top:16px}#hotel-photos #hotel-photo-dialog{padding:16px}#hotel-photos .hotel-view-header h3{font-size:18px}#hotel-photos #hotel-photo-dialog button{font-size:14px;padding:9px 13px}#hotel-photos .hotel-view-controls{display:grid;grid-template-columns:1fr 1fr;gap:18px}#hotel-photos .hotel-view-description{grid-column:1/-1;grid-row:1}}
 
+#before-trip{padding:76px 0 80px;background:linear-gradient(145deg,var(--cream),var(--paper));color:var(--text);scroll-margin-top:24px}
+#before-trip .faq-inner{max-width:1250px;margin:auto}
+#before-trip .faq-heading{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:36px}
+#before-trip h2{font-size:46px;line-height:1.15;letter-spacing:-.04em;color:var(--deep);margin:0}
+#before-trip .faq-heading>p{font-size:17px;line-height:1.8;color:var(--muted);max-width:350px;margin:0 0 4px}
+#before-trip .faq-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:70px;align-items:start}
+#before-trip .faq-list{border-top:1px solid var(--line);min-width:0}
+#before-trip details{border-bottom:1px solid var(--line)}
+#before-trip summary{position:relative;list-style:none;padding:23px 50px 23px 0;font-size:18px;font-weight:600;line-height:1.5;color:var(--deep);cursor:pointer;min-height:68px}
+#before-trip summary::-webkit-details-marker{display:none}
+#before-trip summary::marker{content:''}
+#before-trip summary:focus-visible{outline:3px solid var(--green);outline-offset:5px;border-radius:8px}
+#before-trip .faq-marker{position:absolute;right:5px;top:26px;display:block;width:22px;height:22px}
+#before-trip .faq-marker::before,#before-trip .faq-marker::after{content:'';position:absolute;top:10px;left:2px;width:18px;height:2px;background:var(--green)}
+#before-trip .faq-marker::after{transform:rotate(90deg)}
+#before-trip details[open] .faq-marker::after{transform:rotate(0deg)}
+#before-trip .faq-answer{padding:0 36px 25px 0;max-width:760px}
+#before-trip .faq-answer p{font-size:16px;line-height:1.85;color:var(--muted);margin:0}
+#before-trip .faq-answer p+p{margin-top:12px}
+#before-trip .faq-invitation{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--green);border-radius:13px;padding:30px 26px}
+#before-trip .faq-invitation h3{font-size:23px;line-height:1.3;letter-spacing:-.02em;color:var(--deep);margin:0 0 18px}
+#before-trip .faq-invitation p{font-size:16px;line-height:1.8;color:var(--muted);margin:0 0 26px}
+#before-trip .faq-invitation .button{width:100%;font-size:16px;line-height:1.5;padding:14px 12px;min-height:52px;white-space:nowrap}
+#before-trip .faq-invitation .button:focus-visible{outline:3px solid var(--green);outline-offset:5px}
+@media(max-width:1300px){#before-trip .faq-inner{margin:0 36px}#before-trip .faq-layout{gap:40px;grid-template-columns:minmax(0,1fr) 300px}}
+@media(max-width:900px){#before-trip .faq-layout{gap:28px;grid-template-columns:minmax(0,1fr) 260px}#before-trip .faq-invitation{padding:26px 20px}#before-trip .faq-heading{gap:32px}#before-trip .faq-heading>p{max-width:280px}}
+@media(max-width:700px){#before-trip{padding:48px 0 52px}#before-trip .faq-inner{margin:0 22px}#before-trip .faq-heading{display:block;margin-bottom:26px}#before-trip h2{font-size:34px}#before-trip .faq-heading>p{font-size:16px;max-width:none;margin:22px 0 0}#before-trip .faq-layout{display:block}#before-trip summary{font-size:17px;line-height:1.55;padding:22px 38px 22px 0}#before-trip .faq-marker{right:0;top:25px;width:20px;height:20px}#before-trip .faq-answer{padding:0 4px 23px 0}#before-trip .faq-answer p{font-size:16px;line-height:1.8}#before-trip .faq-invitation{margin-top:28px;padding:26px 24px}#before-trip .faq-invitation h3{font-size:23px}#before-trip .faq-invitation p{font-size:16px;margin-bottom:22px}#before-trip .faq-invitation .button{font-size:16px}}
+
 .holiday-menu .menu-top{max-width:1250px;margin:auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .holiday-menu .menu-logo{width:100px;height:74px;object-fit:contain}
 .holiday-menu .menu-top-actions{display:flex;align-items:center;gap:25px}
