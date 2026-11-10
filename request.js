@@ -10,10 +10,16 @@
     general: 'Поможем выбрать зал или заезд с проживанием.',
     usadba: '31 декабря 2026. Банкет без проживания: 13\u00a0000\u00a0₽ за взрослого.',
     'main-hall': '31 декабря 2026. Банкет без проживания: 18\u00a0000\u00a0₽ за взрослого.',
-    'hotel-stay': '31 декабря 2026 - 2 января 2027. 35\u00a0000\u00a0₽ за взрослого за весь заезд.'
+    'hotel-stay': '31 декабря 2026 - 2 января 2027. 35\u00a0000\u00a0₽ за взрослого за весь заезд.',
+    'bath-help': 'Выберите русскую баню или сауну с хамамом. Уточним стоимость и свободное время на вашу дату.',
+    bath: 'Русская баня в отдельном здании. Уточним стоимость и свободное время на вашу дату.',
+    sauna: 'Сауна и хамам бронируются вместе. Уточним стоимость и свободное время на вашу дату.'
   };
   function updateSummary() {
     summary.textContent = descriptions[offer.value] || descriptions.general;
+    var bathOffer = ['bath-help','bath','sauna'].indexOf(offer.value) !== -1;
+    document.getElementById('request-title').textContent = bathOffer ? 'Баня, сауна и хамам' : 'Заявка на Новый год';
+    form.elements.comment.placeholder = bathOffer ? 'Укажите дату и удобное время. Можно добавить вопросы.' : 'Например, возраст детей или пожелания к размещению';
   }
   document.querySelectorAll('[data-request-offer]').forEach(function(trigger) {
     trigger.addEventListener('click', function() {

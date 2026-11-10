@@ -189,6 +189,27 @@ html.request-open{overflow:hidden}
 @media(max-width:1100px){#territory .territory-inner{gap:32px}#territory .territory-map{padding:26px}}
 @media(max-width:750px){#territory{padding:40px 22px 42px}#territory .territory-inner{grid-template-columns:1fr;gap:30px}#territory h2{font-size:34px}#territory .territory-eyebrow{font-size:12px;margin-bottom:15px}#territory .territory-lead{font-size:14px;margin-top:19px}#territory .territory-photo{margin-top:24px}#territory .territory-map{padding:24px}#territory .territory-map h3{font-size:25px}#territory .territory-map>p{font-size:14px}#territory .territory-map-link{margin-top:20px}#territory .territory-map-link>span{font-size:13px}#territory #territory-map-dialog{padding:14px}#territory .territory-map-header{gap:12px}#territory .territory-map-header h3{font-size:19px}#territory .territory-map-tools{gap:12px}#territory .territory-map-tools>a{margin-left:0}#territory .territory-map-viewport{height:52svh}#territory #territory-map-help{font-size:12px}}
 
+#bathhouse{background:var(--deep);color:var(--paper);padding:65px 36px 70px}
+#bathhouse .bath-inner{max-width:1250px;margin:auto}
+#bathhouse .bath-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:40px}
+#bathhouse h2{font-size:46px;line-height:1.1;letter-spacing:-.045em;color:var(--paper)}
+#bathhouse .bath-heading>p{max-width:430px;font-size:16px;line-height:1.7;color:var(--cream)}
+#bathhouse .bath-options{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+#bathhouse .bath-photo img{height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:15px}
+#bathhouse .bath-photo figcaption{font-size:12px;line-height:1.6;margin-top:10px;color:var(--cream)}
+#bathhouse .bath-location{font-size:12px;line-height:1.6;color:var(--beige);margin-top:25px;margin-bottom:10px}
+#bathhouse h3{font-size:28px;line-height:1.2;letter-spacing:-.035em;color:var(--paper)}
+#bathhouse .bath-description{font-size:15px;line-height:1.75;color:var(--cream);margin-top:16px;max-width:520px}
+#bathhouse .bath-detail{display:flex;align-items:center;gap:20px;margin-top:23px}
+#bathhouse .bath-detail img{width:160px;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:8px}
+#bathhouse .bath-detail figcaption{font-size:13px;line-height:1.6;color:var(--cream)}
+#bathhouse .bath-booking{display:flex;align-items:center;justify-content:space-between;gap:45px;border-top:1px solid var(--green);padding-top:32px;margin-top:36px}
+#bathhouse .bath-booking h3{font-size:23px}
+#bathhouse .bath-booking p{font-size:14px;line-height:1.75;color:var(--cream);max-width:660px;margin-top:12px}
+#bathhouse .bath-booking button{flex-shrink:0;cursor:pointer}
+@media(max-width:900px){#bathhouse .bath-options{gap:26px}#bathhouse .bath-booking{gap:25px}#bathhouse .bath-detail img{width:130px}}
+@media(max-width:650px){#bathhouse{padding:40px 22px 45px}#bathhouse .bath-heading{display:block;margin-bottom:29px}#bathhouse h2{font-size:34px}#bathhouse .bath-heading>p{font-size:14px;margin-top:18px}#bathhouse .bath-options{grid-template-columns:1fr;gap:34px}#bathhouse .bath-photo img{border-radius:13px}#bathhouse .bath-photo figcaption{font-size:12px}#bathhouse h3{font-size:25px}#bathhouse .bath-location{margin-top:20px}#bathhouse .bath-description{font-size:14px;margin-top:14px}#bathhouse .bath-detail{gap:17px;margin-top:20px}#bathhouse .bath-detail img{width:125px}#bathhouse .bath-detail figcaption{font-size:12px}#bathhouse .bath-booking{display:block;margin-top:30px;padding-top:26px}#bathhouse .bath-booking h3{font-size:23px}#bathhouse .bath-booking p{font-size:14px}#bathhouse .bath-booking button{width:100%;margin-top:23px;padding-left:12px;padding-right:12px}}
+
 .holiday-menu .menu-top{max-width:1250px;margin:auto;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
 .holiday-menu .menu-logo{width:100px;height:74px;object-fit:contain}
 .holiday-menu .menu-top-actions{display:flex;align-items:center;gap:25px}
