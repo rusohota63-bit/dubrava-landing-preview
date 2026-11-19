@@ -89,9 +89,9 @@ if (photoViewer) {
     touchStart = undefined;
   }, {passive:true});
 }
-const capacities = {"Основной зал ресторана":100,"Зал «Усадьба»":50,"Зал «Азимут»":200,"Зал «Альянс»":45};
+const capacities = {"Основной зал ресторана":100,"Зал «Усадьба»":90,"Зал «Азимут»":150,"Зал «Альянс»":50,"Помогите выбрать":150};
 function validateGuests() {
-  const limit = capacities[fields.hall.value] || 200;
+  const limit = capacities[fields.hall.value] || 150;
   fields.guests.max = limit;
   fields.guests.setCustomValidity(Number(fields.guests.value) > limit ? `Для этого зала укажите не больше ${limit} гостей.` : "");
 }

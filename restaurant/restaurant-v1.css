@@ -162,3 +162,6 @@ body:has(.photo-viewer[open]) { overflow: hidden; }
   .scheme-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .photo-viewer.is-scheme .viewer-image { cursor: auto; }
 }
+
+.restaurant-breadcrumbs { padding-top: 14px; padding-bottom: 14px; color: var(--muted); font-size: 14px; }
+.restaurant-breadcrumbs a { color: inherit; text-underline-offset: 3px; }
