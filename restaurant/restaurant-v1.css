@@ -1,0 +1,164 @@
+.restaurant-hero { display: grid; grid-template-columns: .9fr 1.1fr; background: var(--cream); border-radius: 18px; overflow: hidden; }
+.restaurant-hero-photo { grid-column: 2; grid-row: 1; }
+.restaurant-hero-photo a, .restaurant-hero-photo img { display: block; width: 100%; height: 100%; }
+.restaurant-hero-photo img { object-fit: cover; }
+.restaurant-hero-copy { grid-column: 1; grid-row: 1; padding: clamp(25px,4vw,58px); }
+.restaurant-hero h1 { font-size: clamp(40px,4.8vw,69px); }
+.restaurant-contact { margin-top: 24px; font-size: 14px; }
+.restaurant-contact a { white-space: nowrap; font-weight: 700; }
+.halls-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding-bottom: 0; }
+.halls-intro p { margin-top: 22px; max-width: 44ch; color: var(--muted); }
+.hall-shortcuts { display: grid; }
+.hall-shortcuts a { display: flex; flex-wrap: wrap; gap: 4px 18px; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-weight: 700; }
+.hall-shortcuts span { color: var(--muted); font-size: 14px; font-weight: 400; }
+.hall { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(28px,4vw,62px); align-items: start; border-bottom: 1px solid var(--line); }
+.hall:nth-of-type(even) .hall-visual { order: 2; }
+.hall-photos { display: grid; gap: 14px; }
+.hall-photos a { display: block; border-radius: 13px; overflow: hidden; background: var(--cream); }
+.hall-photos img { width: 100%; height: auto; max-height: 410px; object-fit: cover; }
+.hall-photos a:nth-child(2) { width: 65%; }
+.hall-photos a:nth-child(2) img { max-height: 220px; }
+.hall-copy h3 { font-size: clamp(29px,3.2vw,44px); }
+.hall-capacity { color: var(--green); font-weight: 700; margin: 14px 0; font-size: 19px; }
+.hall-copy p:not(.hall-capacity) { color: var(--muted); }
+.hall-copy dl { margin: 22px 0 26px; }
+.hall-copy dl div { padding: 12px 0; border-top: 1px solid var(--line); }
+.hall-copy dt { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+.hall-copy dd { margin: 0; font-size: 15px; }
+.event-options { background: var(--cream); margin-top: 64px; }
+.event-options-inner, .restaurant-menu, .request-section { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: center; }
+.event-options p + p, .restaurant-menu p + p, .request-section p + p { margin-top: 16px; }
+.restaurant-menu img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; align-self: center; border-radius: 13px; }
+.restaurant-menu p, .request-section p { margin-top: 22px; color: var(--muted); }
+.request-section { align-items: start; border-top: 1px solid var(--line); }
+.request-section .phone { display: inline-block; margin-top: 8px; }
+.request-section .event-contacts { margin-top: 24px; }
+.request-section .event-contacts p { font-size: 15px; line-height: 1.5; }
+.request-section .event-contacts strong { color: var(--green); }
+.request-section .request-fields input, .request-section .request-fields select { width: 100%; background: var(--paper); }
+.request-section form { min-width: 0; }
+.request-section .request-result { margin-top: 12px; }
+.summer-note { color: var(--muted); padding-bottom: 60px; }
+@media(max-width:1000px) { .restaurant-page .top { gap: 16px; } .restaurant-page .top-nav { gap: 10px 16px; } .hall, .event-options-inner, .restaurant-menu, .request-section { gap: 30px; } }
+@media(max-width:710px) {
+  .restaurant-hero, .halls-intro, .hall, .event-options-inner, .restaurant-menu, .request-section { grid-template-columns: 1fr; }
+  .restaurant-hero-photo { grid-column: 1; grid-row: 1; }
+  .restaurant-hero-photo img { height: auto; aspect-ratio: 3/2; }
+  .restaurant-hero-copy { grid-column: 1; grid-row: 2; padding: 26px 22px; }
+  .restaurant-hero h1 { font-size: 44px; }
+  .restaurant-hero .hero-lead { font-size: 17px; }
+  .halls-intro { gap: 24px; }
+  .hall:nth-of-type(even) .hall-visual { order: 0; }
+  .hall-photos { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .hall-photos a:only-child { grid-column: 1 / -1; }
+  .hall-photos a:nth-child(2) { width: 100%; }
+  .hall-photos img, .hall-photos a:nth-child(2) img { height: 170px; object-fit: cover; }
+  .hall-copy dl { margin-top: 16px; }
+  .event-options { margin-top: 30px; }
+  .restaurant-menu { gap: 26px; }
+  .restaurant-menu img { max-height: 290px; object-fit: cover; }
+  .request-section .request-fields { grid-template-columns: 1fr; }
+  .request-section .inline-request { padding: 18px; }
+}
+.restaurant-page .hero-actions { flex-wrap: wrap; gap: 16px 22px; }
+.restaurant-hero h1 { font-size: clamp(35px,3.5vw,51px); }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 14px 24px; padding: 0; margin: 24px 0; list-style: none; }
+.hero-facts strong { display: block; color: var(--green); font-size: 27px; line-height: 1.3; }
+.why h2, .comparison h2, .food h2, .stay-event h2, .faq h2 { margin: 12px 0 32px; }
+.benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px 45px; padding: 0; list-style: none; }
+.benefits li { border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); }
+.benefits strong { display: block; color: var(--deep); margin-bottom: 8px; font-size: 19px; }
+.formats-band { background: var(--cream); }
+.formats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 38px; }
+.formats-grid h3 { font-size: 25px; margin-bottom: 15px; }
+.formats-grid p + p { margin-top: 12px; font-size: 14px; }
+.comparison table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5; table-layout: fixed; }
+.comparison caption { text-align: left; color: var(--muted); padding-bottom: 18px; }
+.comparison th, .comparison td { text-align: left; vertical-align: top; padding: 16px 10px; overflow-wrap: anywhere; border-bottom: 1px solid var(--line); }
+.comparison thead { background: var(--cream); }
+.comparison th:first-child { width: 13%; }
+.small-note { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 22px; }
+.hall > *, .hall-visual, .hall-copy { min-width: 0; }
+.hall-gallery { min-width: 0; }
+.gallery-main { display: block; overflow: hidden; border-radius: 13px; background: var(--cream); }
+.gallery-main img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
+.gallery-hint { margin: 9px 0 14px; font-size: 13px; color: var(--muted); }
+.gallery-thumbs { display: flex; gap: 8px; overflow-x: auto; padding: 4px 4px 12px; scrollbar-width: thin; }
+.gallery-thumbs a { flex: 0 0 86px; border-radius: 6px; overflow: hidden; }
+.gallery-thumbs a[aria-current] { outline: 3px solid var(--green); outline-offset: 1px; }
+.gallery-thumbs img { width: 86px; height: 64px; object-fit: cover; }
+.hall-schemes { margin-top: 22px; padding: 16px 0; border-block: 1px solid var(--line); }
+.hall-schemes h4 { margin: 0; font-size: 16px; font-weight: 700; }
+.scheme-links { margin: 18px 0 0; padding-left: 20px; font-size: 14px; }
+.scheme-links li + li { margin-top: 8px; }
+.scheme-preview { display: block; }
+.scheme-grid figure { margin: 0; min-width: 0; }
+.scheme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 14px; margin-top: 22px; }
+.scheme-grid img { width: 100%; height: 170px; object-fit: contain; background: white; border: 1px solid var(--line); }
+.scheme-grid figcaption { font-size: 13px; padding-top: 9px; }
+.food { border-bottom: 1px solid var(--line); }
+.food-grid, .terms { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.terms li { margin-bottom: 15px; }
+.terms ul { margin: 0 0 22px; padding-left: 20px; }
+.stay-event { max-width: 900px; text-align: center; }
+.stay-event p { margin-bottom: 24px; }
+.stay-event .action { margin: auto; }
+.faq { max-width: 1000px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.faq summary { font-size: 19px; font-weight: 700; }
+.faq details p { margin-top: 16px; color: var(--muted); }
+.restaurant-menu { padding-top: 60px; }
+.photo-viewer { border: 0; background: var(--deep); color: var(--paper); width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; padding: 64px 60px 50px; }
+.photo-viewer::backdrop { background: var(--deep); }
+.photo-viewer .viewer-image { width: 100%; height: calc(100% - 44px); object-fit: contain; touch-action: pan-y pinch-zoom; }
+.viewer-close, .viewer-prev, .viewer-next { position: absolute; z-index: 1; border: 1px solid var(--beige); border-radius: 8px; background: var(--deep); color: var(--paper); min-width: 44px; min-height: 44px; cursor: pointer; }
+.viewer-close { top: 12px; right: 18px; padding: 8px 16px; }
+.viewer-prev { left: 8px; top: 48%; }
+.viewer-next { right: 8px; top: 48%; }
+.viewer-caption { text-align: center; margin-top: 12px; font-size: 14px; }
+body:has(.photo-viewer[open]) { overflow: hidden; }
+@media(max-width:1000px) {
+  .benefits, .formats-grid { grid-template-columns: 1fr 1fr; }
+  .comparison table, .comparison tbody, .comparison tr, .comparison th, .comparison td { display: block; width: 100%; }
+  .comparison thead { display: none; }
+  .comparison tbody { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .comparison tr { padding: 18px; border: 1px solid var(--line); border-radius: 13px; }
+  .comparison th:first-child { width: 100%; font-size: 23px; }
+  .comparison td::before { content: attr(data-label); display: block; color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+}
+@media(max-width:710px) {
+  .benefits, .formats-grid, .food-grid, .terms, .comparison tbody { grid-template-columns: 1fr; gap: 24px; }
+  .gallery-main img { aspect-ratio: 4/3; }
+  .photo-viewer { padding: 70px 6px 50px; }
+  .viewer-prev, .viewer-next { top: auto; bottom: 16px; }
+  .scheme-grid img { height: 140px; }
+  .restaurant-hero h1 { font-size: 36px; }
+  .hero-facts { gap: 14px 20px; }
+  .restaurant-page .hero-actions a { overflow-wrap: anywhere; }
+}
+@media(max-width:760px) {
+  .comparison caption { display: block; width: 100%; }
+  .comparison tbody { grid-template-columns: 1fr; gap: 16px; }
+  .comparison tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; padding: 12px; }
+  .comparison th:first-child { grid-column: 1 / -1; padding: 6px 0 10px; }
+  .comparison td { width: auto; min-width: 0; padding: 7px 0; }
+  .comparison td[data-label="Другие схемы"], .comparison td[data-label="Оснащение"] { grid-column: 1 / -1; }
+  .comparison td::before { display: inline; content: attr(data-label) ": "; margin-bottom: 0; }
+}
+
+/* Крупные схемы под фотографиями и описанием зала. */
+.hall > .hall-schemes { grid-column: 1 / -1; order: 3; margin-top: 0; }
+.scheme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.scheme-grid img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.scheme-grid figcaption, .scheme-links { font-size: 16px; line-height: 1.5; }
+.photo-viewer { margin: 0; }
+.viewer-stage { width: 100%; height: calc(100% - 64px); overflow: auto; touch-action: pan-x pan-y pinch-zoom; }
+.photo-viewer .viewer-image { display: block; width: 100%; height: 100%; object-fit: contain; touch-action: pan-x pan-y pinch-zoom; }
+.photo-viewer.is-scheme .viewer-image { cursor: zoom-in; }
+.photo-viewer.is-scheme.is-zoomed .viewer-image { width: 200%; height: 200%; max-width: none; cursor: zoom-out; }
+.viewer-pdf { position: absolute; top: 22px; left: 18px; color: var(--paper); font-size: 16px; }
+.photo-viewer.is-scheme .viewer-caption { font-size: 15px; }
+@media (max-width:710px) {
+  .scheme-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .photo-viewer.is-scheme .viewer-image { cursor: auto; }
+}

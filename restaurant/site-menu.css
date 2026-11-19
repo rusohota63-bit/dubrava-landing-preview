@@ -1,0 +1,98 @@
+.site-menu-button, .site-menu .site-menu-home {
+  display: none;
+}
+
+.site-menu .nav-stay {
+  white-space: nowrap;
+}
+
+@media (max-width: 710px) {
+  .site-menu {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0 10px;
+    height: auto;
+  }
+
+  .site-menu > :first-child {
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .site-menu > .tel, .site-menu > .phone {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0;
+    white-space: nowrap;
+  }
+
+  .site-menu-button:not([hidden]) {
+    display: inline-flex;
+    grid-column: 3;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 9px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--deep);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .site-menu-icon {
+    position: relative;
+    width: 16px;
+    height: 12px;
+    border-block: 2px solid currentColor;
+  }
+
+  .site-menu-icon::after {
+    position: absolute;
+    inset: calc(50% - 1px) 0 auto;
+    height: 2px;
+    background: currentColor;
+    content: "";
+  }
+
+  .site-menu > #site-navigation {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+  }
+
+  .site-menu-button:not([hidden]) + #site-navigation {
+    position: absolute;
+    inset: 100% 0 auto;
+    padding: 5px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    box-shadow: 0 8px 24px #1f2c1426;
+  }
+
+  .site-menu-button[aria-expanded="false"]:not([hidden]) + #site-navigation {
+    display: none;
+  }
+
+  .site-menu #site-navigation a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 650;
+  }
+
+  .site-menu #site-navigation a + a {
+    border-top: 1px solid var(--line);
+  }
+}
