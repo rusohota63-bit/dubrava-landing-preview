@@ -1,0 +1,208 @@
+.wedding-page { font-size: 16px; }
+.wedding-page p { text-wrap: pretty; }
+.wedding-page h1, .wedding-page h2, .wedding-page h3 { text-wrap: balance; }
+.wedding-page .crumbs { padding-block: 0 12px; margin-block: 0; font-size: 16px; }
+.wedding-page .crumbs a { display: inline-flex; align-items: center; min-height: 44px; }
+.wedding-page .wedding-hero { width: min(calc(100% - 56px), 1540px); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 38fr) minmax(0, 62fr); background: var(--cream); border-radius: 18px; overflow: hidden; }
+.wedding-page .hero-copy { padding: 32px clamp(24px, 3vw, 48px); align-self: center; }
+.wedding-page .hero-meta { color: var(--muted); margin-bottom: 18px; font-size: 16px; }
+.wedding-page h1 { font-size: clamp(38px, 3.8vw, 58px); line-height: 1.07; text-wrap: balance; }
+.wedding-page .hero-lead { margin-top: 24px; font-size: 17px; line-height: 1.55; }
+.wedding-page .hero-actions { margin-top: 24px; }
+.wedding-page .action { font-size: 16px; min-height: 54px; }
+.wedding-page .hero-links { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 14px; }
+.wedding-page .inline-link { font-size: 16px; }
+.wedding-page .hero-phone { font-size: 16px; color: var(--muted); margin-top: 12px; }
+.wedding-page .hero-phone a { display: inline-flex; min-height: 44px; align-items: center; white-space: nowrap; }
+.wedding-page .hero-photo { min-width: 0; height: min(600px, 67vh); align-self: stretch; }
+.wedding-page .hero-photo picture, .wedding-page .hero-photo img { display: block; width: 100%; height: 100%; }
+.wedding-page .hero-photo img { object-fit: cover; object-position: 50% 48%; }
+.wedding-page .hero-facts { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr 1.35fr; gap: 28px; padding: 23px 36px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.wedding-page .hero-facts p { padding-right: 24px; line-height: 1.45; }
+.wedding-page .hero-facts p + p { border-left: 1px solid var(--line); padding-left: 28px; }
+.wedding-page .hero-facts strong { color: var(--deep); font-weight: 750; }
+.wedding-page .hero-secondary { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 12px 36px; background: var(--paper); }
+.wedding-page .hero-secondary .hero-links, .wedding-page .hero-secondary .hero-phone { margin: 0; }
+.wedding-page .section {  }
+.wedding-page h2 {  text-wrap: balance; }
+.wedding-page h3 {  text-wrap: balance; }
+.wedding-page .why-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px 64px; align-items: start; }
+.wedding-page .why-layout > h2 { grid-column: 2; grid-row: 1; }
+.wedding-page .why-intro { grid-column: 2; grid-row: 2; font-size: 20px; }
+.wedding-page .why-details { grid-column: 2; grid-row: 3; }
+.wedding-page .why-details > p + p { margin-top: 23px; }
+.wedding-page .why-photo { grid-column: 1; grid-row: 1 / 4; margin: 0; position: relative; align-self: stretch; min-height: 0; }
+.wedding-page .why-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 13px; }
+.wedding-page .why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 24px; }
+.wedding-page .why-stats strong { display: block; color: var(--green); font-size: clamp(42px, 5vw, 66px); letter-spacing: -.05em; line-height: 1.1; }
+.wedding-page .why-details .inline-link { margin-top: 20px; }
+.wedding-page .story-strip { display: grid; grid-template-columns: 1.2fr 1fr .8fr; gap: 28px; margin-top: 54px; align-items: end; }
+.wedding-page .story-strip figure { display: grid; grid-template-rows: auto 48px; gap: 10px; }
+.wedding-page .story-strip figcaption { margin: 0; }
+.wedding-page .story-strip img { width: 100%; height: auto; border-radius: 13px; }
+.wedding-page figcaption { font-size: 16px; color: var(--muted); margin-top: 10px; }
+.wedding-page .venues-band { background: var(--cream); }
+.wedding-page .venues-intro { display: grid; grid-template-columns: 1fr .75fr; gap: 64px; align-items: end; margin-bottom: 40px; }
+.wedding-page .venues-intro p + p { margin-top: 16px; }
+.wedding-page .venue-question { font-size: 24px; color: var(--deep); }
+.wedding-page .guest-table { border-collapse: collapse; width: 100%; background: var(--paper); border-radius: 12px; overflow: hidden; }
+.wedding-page .guest-table caption { text-align: left; font-size: 22px; font-weight: 600; color: var(--deep); padding-bottom: 20px; }
+.wedding-page .guest-table th, .wedding-page .guest-table td { text-align: left; padding: 17px 25px; border-bottom: 1px solid var(--line); }
+.wedding-page .guest-table th { font-weight: 600; }
+.wedding-page .guest-table td:first-child { width: 22%; font-size: 22px; white-space: nowrap; }
+.wedding-page .venue-pills { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.wedding-page .guest-table .venue-pill { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; justify-content: center; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); text-decoration: none; line-height: 1.45; }
+.wedding-page .guest-table .venue-pill:hover { background: var(--cream); border-color: var(--green); }
+.wedding-page .venue-pill[data-season]::after { content: attr(data-season); color: var(--muted); font-size: 14px; white-space: nowrap; }
+.wedding-page .seasonal-options { margin-top: 10px; }
+.wedding-page .seasonal-options:first-child { margin-top: 0; }
+.wedding-page .table-season { display: none; }
+.wedding-page .minimum-note { margin-top: 28px; max-width: 74ch; }
+.wedding-page .venue { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 48px; align-items: center;  border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+.wedding-page .venue--continent, .wedding-page .venue--main-hall { grid-template-columns: 1fr; gap: 36px; }
+.wedding-page .venue--olympia .venue-copy, .wedding-page .venue--usadba .venue-copy { grid-column: 1; grid-row: 1; }
+.wedding-page .venue--olympia, .wedding-page .venue--usadba { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); }
+.wedding-page .venue--olympia .venue-gallery, .wedding-page .venue--usadba .venue-gallery { grid-column: 2; grid-row: 1; }
+.wedding-page .venue-copy { font-size: 18px; max-width: 60ch; }
+.wedding-page .venue--continent .venue-copy, .wedding-page .venue--main-hall .venue-copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; max-width: none; }
+.wedding-page .venue-copy p, .wedding-page .venue-copy ul { max-width: 60ch; }
+.wedding-page .venue:last-child { border-bottom: 0;  }
+.wedding-page .venue-copy > p { margin-top: 19px; }
+.wedding-page .venue-summary p { margin-top: 19px; }
+.wedding-page .venue-details > p + p { margin-top: 19px; }
+.wedding-page .venue-copy ul { padding-left: 22px; margin-block: 20px; }
+.wedding-page .venue-copy li + li { margin-top: 7px; }
+.wedding-page .venue .season { display: inline-flex; background: var(--cream); border-radius: 30px; padding: 8px 16px; margin-bottom: 18px; }
+.wedding-page .venue .capacity { font-size: 28px; color: var(--green); font-weight: 600; line-height: 1.3; }
+.wedding-page .venue .price { font-size: 24px; color: var(--deep); line-height: 1.4; }
+.wedding-page .venue .price strong { display: inline-block; font-size: 34px; font-weight: 600; }
+.wedding-page .venue .price small { display: block; font-size: 18px; margin-top: 4px; }
+.wedding-page .venue .action { margin-top: 26px; background: transparent; color: var(--green); box-shadow: none; animation: none; }
+.wedding-page .venue .action::after { content: none; }
+.wedding-page .venue .action:hover { background: var(--green); color: var(--paper); }
+.wedding-page .venue-gallery { min-width: 0; }
+.wedding-page .mosaic { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(220px, .8fr); grid-template-rows: 1fr 1fr; gap: 16px; height: 620px; }
+.wedding-page .mosaic-photo { position: relative; display: block; min-width: 0; min-height: 0; border-radius: 13px; overflow: hidden; }
+.wedding-page .mosaic-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.wedding-page .mosaic-primary { grid-column: 1; grid-row: 1 / 3; }
+.wedding-page .mosaic-secondary { grid-column: 2; }
+.wedding-page .mosaic--wide { display: block; height: auto; }
+.wedding-page .mosaic--wide .mosaic-primary { height: 540px; }
+.wedding-page .mosaic--olympia { height: 790px; }
+.wedding-page .mosaic--usadba { grid-template-rows: 1.6fr 1fr; height: 690px; }
+.wedding-page .mosaic--alliance { grid-template-rows: 1fr 1.6fr; height: 690px; }
+.wedding-page .mosaic--veranda { grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); height: clamp(230px, 25vw, 360px); }
+.wedding-page .mosaic--main-hall { grid-template-columns: minmax(220px, .7fr) minmax(220px, 1.15fr) minmax(220px, 1.15fr); grid-template-rows: 620px 420px; height: auto; }
+.wedding-page .mosaic--main-hall .mosaic-primary { grid-column: 1 / -1; grid-row: 1; }
+.wedding-page .mosaic--main-hall .mosaic-secondary { grid-column: auto; grid-row: 2; }
+.wedding-page .mosaic--main-hall .mosaic-secondary.is-portrait { grid-column: 1; }
+.wedding-page .mosaic-photo.mosaic-hidden { display: none; }
+.wedding-page .more-badge { position: absolute; right: 12px; bottom: 12px; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 17px; border-radius: 8px; background: var(--deep); color: var(--paper); font-size: 18px; font-weight: 600; box-shadow: 0 3px 12px #1f2c1433; }
+.wedding-page .more-badge.mobile-more { display: none; }
+.wedding-page .gallery-caption { margin-top: 12px; color: var(--muted); }
+.wedding-page .photo-viewer { margin: 0; border: 0; background: var(--deep); color: var(--paper); width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; padding: 70px 60px 74px; }
+.wedding-page .photo-viewer::backdrop { background: var(--deep); }
+.wedding-page .viewer-image { width: 100%; height: calc(100% - 140px); object-fit: contain; touch-action: pan-y pinch-zoom; }
+.wedding-page .viewer-filmstrip { display: flex; gap: 10px; overflow-x: auto; width: 100%; padding: 6px 4px; margin-top: 10px; }
+.wedding-page .viewer-filmstrip button { flex: 0 0 76px; min-width: 44px; min-height: 64px; padding: 0; border: 2px solid transparent; border-radius: 13px; overflow: hidden; background: var(--deep); }
+.wedding-page .viewer-filmstrip img { display: block; width: 76px; height: 64px; object-fit: cover; }
+.wedding-page .viewer-filmstrip [aria-current] { border-color: var(--paper); }
+.wedding-page .viewer-close, .wedding-page .viewer-prev, .wedding-page .viewer-next { position: absolute; z-index: 1; border: 1px solid var(--beige); border-radius: 8px; background: var(--deep); color: var(--paper); min-width: 44px; min-height: 44px; padding: 8px 16px; font-size: 16px; }
+.wedding-page .viewer-close { top: 12px; right: 18px; }
+.wedding-page .viewer-prev { left: 8px; top: 48%; }
+.wedding-page .viewer-next { right: 8px; top: 48%; }
+.wedding-page .viewer-caption { text-align: center; margin-top: 12px; font-size: 16px; }
+body.wedding-page:has(.photo-viewer[open]) { overflow: hidden; }
+.wedding-page .footer { margin-top: 80px; }
+.wedding-page .mosaic--continent { height: auto; max-width: 1100px; margin-inline: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; }
+.wedding-page .mosaic--continent .mosaic-primary { grid-column: 1 / -1; grid-row: 1; aspect-ratio: 1200/801; }
+.wedding-page .mosaic--continent .mosaic-secondary { grid-column: auto; grid-row: 2; aspect-ratio: 3/2; }
+@media (prefers-reduced-motion: reduce) {
+  .wedding-page { scroll-behavior: auto; }
+  .wedding-page .hero-actions .action { animation: glow 8s ease-in-out infinite; }
+  .wedding-page .hero-actions .action::after { animation: shine 12s ease-in-out infinite; }
+}
+@media (max-width: 1100px) {
+  .wedding-page .hero-copy { padding: 25px; }
+  .wedding-page h1 { font-size: 40px; }
+  .wedding-page .hero-photo { height: 680px; max-height: 78vh; }
+  .wedding-page .why-layout, .wedding-page .venue { gap: 32px; }
+  .wedding-page .top { gap: 18px; }
+  .wedding-page .top-nav { gap: 12px; }
+}
+@media (max-width: 800px) {
+  .wedding-page .wedding-hero { grid-template-columns: 1fr 1.25fr; }
+  .wedding-page .hero-copy { padding: 22px; }
+  .wedding-page h1 { font-size: 36px; }
+  .wedding-page .hero-facts { padding: 20px; gap: 16px; }
+  .wedding-page .hero-facts p { padding-right: 0; }
+  .wedding-page .hero-facts p + p { padding-left: 16px; }
+  .wedding-page .venues-intro { gap: 32px; grid-template-columns: 1fr; }
+  .wedding-page .venue { grid-template-columns: 1fr; }
+  .wedding-page .venue--olympia .venue-copy, .wedding-page .venue--usadba .venue-copy, .wedding-page .venue--olympia .venue-gallery, .wedding-page .venue--usadba .venue-gallery { grid-column: auto; grid-row: auto; }
+  .wedding-page .why-layout { grid-template-columns: 1fr; }
+  .wedding-page .why-layout > h2 { grid-column: 1; grid-row: 1; }
+  .wedding-page .why-intro { grid-column: 1; grid-row: 2; }
+  .wedding-page .why-photo { grid-column: 1; grid-row: 3; position: static; }
+  .wedding-page .why-photo img { position: static; height: auto; aspect-ratio: 2/3; }
+  .wedding-page .why-details { grid-column: 1; grid-row: 4; }
+  .wedding-page .mosaic--main-hall { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 420px 300px; }
+}
+@media (max-width: 710px) {
+  .wedding-page .wrap { width: calc(100% - 40px); }
+  .wedding-page .crumbs { padding-block: 2px 10px; }
+  .wedding-page .wedding-hero { width: calc(100% - 24px); display: flex; flex-direction: column; border-radius: 13px; padding-top: 22px; }
+  .wedding-page .hero-copy { display: contents; }
+  .wedding-page .hero-secondary { display: contents; }
+  .wedding-page .hero-meta { order: 0; margin: 0 20px 14px; }
+  .wedding-page h1 { order: 1; font-size: 36px; margin-inline: 20px; }
+  .wedding-page .hero-actions { order: 2; margin: 20px; }
+  .wedding-page .hero-actions .action { width: 100%; }
+  .wedding-page .hero-photo { order: 3; height: 430px; max-height: none; width: 100%; }
+  .wedding-page .hero-photo img { object-position: 50% 44%; }
+  .wedding-page .hero-lead { order: 4; margin: 24px 20px 0; font-size: 17px; }
+  .wedding-page .hero-facts { order: 5; grid-template-columns: 1fr; gap: 0; margin-top: 22px; background: transparent; padding: 0 20px; border-bottom: 0; }
+  .wedding-page .hero-facts p { padding-block: 14px; border-top: 1px solid var(--line); }
+  .wedding-page .hero-facts p + p { border-left: 0; padding-left: 0; }
+  .wedding-page .hero-secondary .hero-links { order: 6; margin: 8px 20px; }
+  .wedding-page .hero-secondary .hero-phone { order: 7; margin: 0 20px 20px; }
+  .wedding-page .section {  }
+  .wedding-page h2 {  }
+  .wedding-page .why-layout { grid-template-columns: 1fr; gap: 26px; }
+  .wedding-page .why-layout > h2 { grid-column: 1; grid-row: 1; }
+  .wedding-page .why-intro { grid-column: 1; grid-row: 2; font-size: 18px; }
+  .wedding-page .why-photo { grid-column: 1; grid-row: 3; position: static; }
+  .wedding-page .why-photo img { position: static; height: auto; aspect-ratio: 2/3; }
+  .wedding-page .why-details { grid-column: 1; grid-row: 4; }
+  .wedding-page .story-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; margin-top: 28px; }
+  .wedding-page .story-strip figure:first-child { grid-column: 1 / -1; }
+  .wedding-page .story-strip img { aspect-ratio: 4/3; object-fit: cover; }
+  .wedding-page .story-strip figure:first-child img { aspect-ratio: 3/2; }
+  .wedding-page .venues-intro { gap: 24px; }
+  .wedding-page .guest-table, .wedding-page .guest-table tbody { display: block; background: transparent; }
+  .wedding-page .guest-table caption { display: block; font-size: 22px; }
+  .wedding-page .guest-table thead { position: absolute; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; }
+  .wedding-page .guest-table tr { display: block; background: var(--paper); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+  .wedding-page .guest-table td { display: block; border: 0; padding: 0; }
+  .wedding-page .guest-table td:first-child { width: auto; margin-bottom: 6px; }
+  .wedding-page .guest-table .venue-pill { line-height: 1.45; }
+  .wedding-page .venue-pill[data-season]::after { content: none; }
+  .wedding-page .table-season { display: block; margin-bottom: 8px; color: var(--muted); }
+  .wedding-page .venue {  gap: 28px; }
+  .wedding-page .venue h3 {  }
+  .wedding-page .venue .capacity { font-size: 26px; }
+  .wedding-page .venue--continent .venue-copy, .wedding-page .venue--main-hall .venue-copy { grid-template-columns: 1fr; gap: 24px; }
+  .wedding-page .venue-copy { font-size: 17px; }
+  .wedding-page .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 12px; height: auto; }
+  .wedding-page .mosaic .mosaic-primary { grid-column: 1 / -1; grid-row: 1; height: auto; aspect-ratio: 4/3; }
+  .wedding-page .mosaic .mosaic-primary.is-portrait { aspect-ratio: 3/4; }
+  .wedding-page .mosaic .mosaic-secondary { grid-column: auto; grid-row: 2; aspect-ratio: 4/3; }
+  .wedding-page .mosaic:has(.mosaic-secondary.is-portrait:not(.mosaic-hidden):not(.mobile-hidden)) .mosaic-secondary { aspect-ratio: 3/4; }
+  .wedding-page .mosaic-photo.mobile-hidden { display: none; }
+  .wedding-page .mosaic--wide { display: block; }
+  .wedding-page .more-badge.desktop-more { display: none; }
+  .wedding-page .more-badge.mobile-more { display: inline-flex; }
+  .wedding-page .photo-viewer { padding: 70px 12px 95px; }
+  .wedding-page .viewer-prev, .wedding-page .viewer-next { top: auto; bottom: 16px; }
+  .wedding-page .footer { margin-top: 0; }
+}
