@@ -37,6 +37,8 @@
   const bar = document.querySelector('.wedding-sticky');
   const hero = document.getElementById('wedding');
   const request = document.getElementById('request');
+  const calculator = document.getElementById('wedding-calculator');
+  const calculatorBar = document.getElementById('wc-mobile-total');
   if (!bar || !hero || !request) return;
   let pending = false;
   function updateSticky() {
@@ -46,9 +48,14 @@
     const consent = document.getElementById('analytics-consent');
     const cookieOpen = consent && !consent.hidden;
     const dialogOpen = !!document.querySelector('.photo-viewer[open]');
-    const show = hero.getBoundingClientRect().bottom <= 0 && !inForm && !cookieOpen && !dialogOpen;
+    const calcBox = calculator?.getBoundingClientRect();
+    const calcVisible = calculator && !calculator.hidden && calcBox.top < innerHeight && calcBox.bottom > 0;
+    const allowed = hero.getBoundingClientRect().bottom <= 0 && !inForm && !cookieOpen && !dialogOpen;
+    const calcShow = allowed && calcVisible && matchMedia('(max-width: 710px)').matches;
+    const show = allowed && !calcShow;
+    if (calculatorBar) calculatorBar.hidden = !calcShow;
     bar.hidden = !show;
-    document.body.classList.toggle('has-wedding-sticky', show);
+    document.body.classList.toggle('has-wedding-sticky', show || calcShow);
   }
   function schedule() {
     if (!pending) { pending = true; requestAnimationFrame(updateSticky); }
@@ -57,6 +64,8 @@
   addEventListener('resize', schedule, {passive: true});
   const observer = new IntersectionObserver(schedule);
   observer.observe(hero); observer.observe(request);
+  if (calculator) observer.observe(calculator);
+  document.addEventListener('wedding:calculator-ready', schedule);
   const consent = document.getElementById('analytics-consent');
   if (consent) new MutationObserver(schedule).observe(consent, {attributes: true, attributeFilter: ['hidden']});
   const viewer = document.querySelector('.photo-viewer');

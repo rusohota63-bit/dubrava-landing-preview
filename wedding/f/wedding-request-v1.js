@@ -59,14 +59,21 @@
       : 'Если гостей больше 200, позвоните: 8 (846) 979-95-95. Можно отправить заявку с вариантом «Помогите выбрать».';
     return {valid: hall === 'Помогите выбрать', message: `Для этой площадки от ${range[0]} до ${range[1]} гостей. ${suggestion}`};
   }
+  function calculatorComment(values) {
+    const c = values.calculation;
+    if (!c || !Object.hasOwn(limits, c.hall) || !Number.isSafeInteger(c.guests) || typeof c.summary !== 'string') return '';
+    const changed = values.hall !== c.hall || Number(values.guests) !== c.guests;
+    return c.summary.slice(0, 500) + (changed ? ' (изменено в заявке)' : '');
+  }
   function payload(values, requestId) {
+    const calculation = calculatorComment(values);
     return {
       offer: 'wedding', name: values.name.trim(), phone: values.phone.trim(),
       // The existing handler accepts at most three digits. Preserve larger requests in the comment.
       guests: Number(values.guests) <= 999 ? String(Number(values.guests)) : '',
       policy_read: values.consent ? 'yes' : '', company: values.company,
       request_id: requestId,
-      comment: `Раздел сайта: Свадьбы. Запрос расчёта свадьбы\nПлощадка: ${values.hall}\nДата свадьбы: ${values.date}\nЧисло гостей: ${Number(values.guests)}`
+      comment: (`Раздел сайта: Свадьбы. Запрос расчёта свадьбы\nПлощадка: ${values.hall}\nДата свадьбы: ${values.date}\nЧисло гостей: ${Number(values.guests)}` + (calculation ? '\n' + calculation : '')).slice(0, 1500)
     };
   }
   function formScrollDestination(rectTop, scrollY, viewportHeight, pageHeight) {
@@ -88,7 +95,7 @@
     return errors;
   }
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {limits, messages, tomorrow, validDate, validPhone, guestAdvice, recommendedVenues, payload, formScrollDestination, fieldReasons};
+    module.exports = {limits, messages, tomorrow, validDate, validPhone, guestAdvice, recommendedVenues, payload, calculatorComment, formScrollDestination, fieldReasons};
     return;
   }
   const form = document.getElementById('wedding-request');
@@ -97,13 +104,14 @@
   const result = form.querySelector('.request-result');
   const hint = document.getElementById('wedding-guest-hint');
   const submit = form.querySelector('[type="submit"]');
-  let previousAttempt;
+  let previousAttempt, calculation;
   const order = ['hall', 'date', 'guests', 'name', 'phone', 'consent'];
   const touched = new Set();
   let submitted = false;
   function readValues() {
     const values = Object.fromEntries(['hall', 'date', 'guests', 'name', 'phone', 'company'].map(name => [name, field(name).value]));
     values.consent = field('consent').checked;
+    if (calculation) values.calculation = calculation;
     return values;
   }
   function syncValidation(force = false) {
@@ -166,11 +174,22 @@
   function chooseHall(hall, navigate = false) {
     if (!Object.hasOwn(limits, hall)) return;
     field('hall').value = hall;
+    if (typeof CustomEvent === 'function' && document.dispatchEvent) {
+      document.dispatchEvent(new CustomEvent('wedding:form-hall', {detail: {hall}}));
+    }
     syncValidation();
     result.textContent = '';
     if (navigate) scrollToForm();
   }
   document.addEventListener('wedding:hall-selected', event => chooseHall(event.detail.hall));
+  document.addEventListener('wedding:calculation-selected', event => {
+    const c = event.detail;
+    if (!c || !Object.hasOwn(limits, c.hall) || !Number.isSafeInteger(c.guests) || c.guests < 1 || c.guests > 200 || typeof c.summary !== 'string') return;
+    calculation = {hall: c.hall, guests: c.guests, summary: c.summary};
+    field('guests').value = String(c.guests);
+    if (window.location.hash !== '#request') window.history.pushState(null, '', '#request');
+    chooseHall(c.hall, true);
+  });
   // Works even if the gallery script could not initialize.
   document.querySelectorAll('a[href="#request"]').forEach(link => {
     link.addEventListener('click', event => {
@@ -206,7 +225,7 @@
       const response = await fetch(form.action, {method: 'POST', body: data, credentials: 'same-origin', cache: 'no-store'});
       const outcome = await response.json();
       if (response.ok && outcome.result === 'sent') {
-        form.reset(); previousAttempt = undefined; touched.clear(); submitted = false; syncValidation();
+        form.reset(); previousAttempt = undefined; calculation = undefined; touched.clear(); submitted = false; syncValidation();
         result.textContent = messages.sent;
       } else if (response.status === 429) result.textContent = messages.limited;
       else if (response.status === 422 || response.status === 409) result.textContent = messages.invalid;
