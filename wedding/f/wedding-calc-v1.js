@@ -1,24 +1,21 @@
 (function (root) {
   'use strict';
   const venues = Object.freeze([
-    {id:'continent',name:'«Континент»',min:1,max:200,rent:30000,minimum:300000,summer:true,end:'24:00',extension:false},
-    {id:'olympia',name:'«Олимпия»',min:50,max:100,rent:30000,minimum:250000,summer:true,end:'23:00',extension:false},
-    {id:'main',name:'Основной зал',min:1,max:80,rent:30000,minimum:250000,summer:false,end:'24:00',extension:true},
-    {id:'azimuth',name:'«Азимут»',min:1,max:60,rent:10000,minimum:0,summer:false,end:null,extension:true},
-    {id:'veranda',name:'Веранда',min:30,max:60,rent:null,minimum:0,summer:true,end:'23:00',extension:false},
-    {id:'estate',name:'«Усадьба»',min:1,max:50,rent:10000,minimum:0,summer:false,end:null,extension:true},
-    {id:'alliance',name:'«Альянс»',min:1,max:30,rent:10000,minimum:0,summer:false,end:null,extension:true}
+    {id:'continent',name:'«Континент»',min:1,max:200,rent:30000,minimum:300000,summer:true,end:'24:00'},
+    {id:'olympia',name:'«Олимпия»',min:50,max:100,rent:30000,minimum:300000,summer:true,end:'23:00'},
+    {id:'main',name:'Основной зал',min:1,max:80,rent:30000,minimum:300000,summer:false,end:'24:00'},
+    {id:'azimuth',name:'«Азимут»',min:1,max:60,rent:10000,minimum:0,summer:false,end:'24:00'},
+    {id:'veranda',name:'Веранда',min:30,max:60,rent:null,minimum:0,summer:true,end:'23:00'},
+    {id:'estate',name:'«Усадьба»',min:1,max:50,rent:10000,minimum:0,summer:false,end:'24:00'},
+    {id:'alliance',name:'«Альянс»',min:1,max:30,rent:10000,minimum:0,summer:false,end:'24:00'}
   ].map(Object.freeze));
   const suitable = (v,n) => n >= v.min && n <= v.max;
   const money = n => new Intl.NumberFormat('ru-RU',{maximumFractionDigits:0}).format(n).replace(/[\s\u202f]/g,'\u00a0')+'\u00a0₽';
-  function calculate({venue,guests,buffet=false,hours=0}) {
+  function calculate({venue,guests}) {
     const v=venues.find(item=>item.id===venue);
     if (!v) throw new RangeError('Неизвестная площадка');
     if (!Number.isInteger(guests)||guests<1||guests>200) throw new RangeError('Число гостей: от 1 до 200');
-    if (!Number.isInteger(hours)||hours<0||hours>3) throw new RangeError('Продление: от 0 до 3 часов');
     const banquet=guests*6000;
-    const appliedHours=v.extension?hours:0;
-    const extras=(buffet?5000:0)+appliedHours*5000;
     const base=v.rent===null?null:Math.max(banquet+v.rent,v.minimum);
     const minimumApplied=base!==null&&banquet+v.rent<v.minimum;
     const valid=suitable(v,guests);
@@ -29,10 +26,10 @@
         .sort((a,b)=>a.max-b.max || (banquet+a.rent)-(banquet+b.rent));
       suggestion=candidates.find(x=>!valid || Math.max(banquet+x.rent,x.minimum)<base)||null;
     }
-    const total=base===null?null:base+extras;
+    const total=base;
     return {venue:v,guests,banquet,rent:v.rent,base,minimumApplied,
       minimumTopUp:minimumApplied?v.minimum-banquet-v.rent:0,
-      buffet:!!buffet,hours:appliedHours,extras,total,
+      total,
       perGuest:total===null?null:Math.round(total/guests),valid,suggestion};
   }
   const api={venues,suitable,money,calculate};
@@ -48,7 +45,7 @@ if(!root)return;
 'use strict';
 const {venues,calculate,suitable,money}=WeddingCalculation;
 const $=id=>document.getElementById('wc-'+id);
-const state={venue:'azimuth',guests:45,buffet:false,hours:0};
+const state={venue:'azimuth',guests:45};
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let result,frame=0,displayed=280000,liveTimer;
 for(const v of venues){
@@ -61,11 +58,8 @@ for(const v of venues){
   b.addEventListener('click',()=>{if(!suitable(v,state.guests))return;selectVenue(v.id);});
   $('venues').append(b);
 }
-for(let n=0;n<=3;n++){
-  const b=document.createElement('button');b.type='button';b.textContent=n===0?'Без':`${n} ч`;b.dataset.hours=n;b.setAttribute('aria-label',n===0?'Без продления':`Продление: ${n} ч`);
-  b.addEventListener('click',()=>{state.hours=n;render();});$('hours').append(b);
-}
-function selectVenue(id){state.venue=id;if(!venues.find(v=>v.id===id).extension)state.hours=0;render();}
+
+function selectVenue(id){state.venue=id;render();}
 function amountTo(total){
   cancelAnimationFrame(frame);
   if(total===null)return;
@@ -88,8 +82,6 @@ function render(){
     $('suggestion-text').textContent=`Для ${state.guests} гостей ${r.valid?'удобнее':'подойдёт'} ${r.suggestion.name}: от ${money(alternative.total)}`;
     $('switch-venue').textContent=`Выбрать ${r.suggestion.name}`;
   }
-  for(const b of $('hours').children){b.disabled=!v.extension;b.setAttribute('aria-pressed',String(Number(b.dataset.hours)===r.hours));}
-  $('hours-note').textContent=v.extension?'5 000 ₽ за час, до 3 часов':'На этой площадке продления после 24:00 нет.';
   $('receipt-venue').textContent=`${v.name}, ${state.guests} гостей`;
   $('price-area').querySelector('.wc-total').hidden=r.total===null;
   $('price-area').querySelector('.wc-total').classList.toggle('wc-million',r.total>=1000000);
@@ -103,16 +95,12 @@ function render(){
   addLine(`Банкет: ${state.guests} × 6 000 ₽`,money(r.banquet));
   addLine('Аренда',r.rent===null?'Уточним':money(r.rent));
   if(r.minimumApplied)addLine('До минимального заказа',money(r.minimumTopUp));
-  if(state.buffet)addLine('Фуршет из своих продуктов',money(5000));
-  if(r.hours)addLine(`Продление: ${r.hours} ч`,money(r.hours*5000));
-  if(!r.extras)addLine('Дополнения','Не выбраны');
   $('mobile-label').textContent=r.total===null?'Банкет, аренда отдельно':r.valid?'Ваша свадьба':'Проверьте вместимость';
   $('mobile-amount').textContent=r.total===null?'Аренду уточним':`от ${money(r.total)}`;
 
 }
 $('guests').addEventListener('input',e=>{state.guests=Number(e.target.value);render();});
 for(const [id,delta] of [['minus',-1],['plus',1]])$(id).addEventListener('click',()=>{state.guests=Math.max(10,Math.min(200,state.guests+delta));render();});
-$('buffet').addEventListener('change',e=>{state.buffet=e.target.checked;render();});
 $('switch-venue').addEventListener('click',()=>{if(result.suggestion){const id=result.suggestion.id;selectVenue(id);root.querySelector(`[data-id="${id}"]`).focus();}});
 $('request').addEventListener('click',requestCalculation);
 $('view-receipt').addEventListener('click',()=>($('receipt').scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'start'}),$('receipt').focus({preventScroll:true})));
@@ -121,7 +109,7 @@ const hallNames={continent:'Шатёр «Континент»',olympia:'Шатё
 function requestCalculation(){
  const r=result;
  const sum=r.total===null?`банкет от ${money(r.banquet)}, аренда уточняется`:`от ${money(r.total)}`;
- const summary=`Калькулятор: ${r.venue.name}, ${r.guests} гостей, ${sum}; фуршет из своих продуктов: ${r.buffet?'да':'нет'}; продление: ${r.hours} ч`;
+ const summary=`Калькулятор: ${r.venue.name}, ${r.guests} гостей, ${sum}`;
  document.dispatchEvent(new CustomEvent('wedding:calculation-selected',{detail:{hall:hallNames[r.venue.id],guests:r.guests,summary}}));
 }
 document.addEventListener('wedding:form-hall',event=>{
