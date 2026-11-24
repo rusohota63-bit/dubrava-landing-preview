@@ -7,6 +7,7 @@
 .wedding-page main img[loading=lazy], .wedding-page .mosaic-photo, .wedding-page .gallery-tile { border-radius: 13px; }
 .wedding-page .story-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .wedding-page .story-strip img { aspect-ratio: 3/2; object-fit: cover; }
+.wedding-page .story-strip figure { display: block; }
 .wedding-page .ceremony-copy-left > figure { margin-top: 26px; }
 .wedding-page .ceremony-copy-left > figure img { aspect-ratio: 2/1; object-fit: cover; }
 .wedding-page .ceremony-moments { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -14,9 +15,11 @@
 .wedding-page .ceremony-moment img, .wedding-page .ceremony-moment:first-child img { aspect-ratio: 3/4; }
 .wedding-page .ceremony-moment:nth-child(4) { transform: none; }
 .wedding-page .menu-images { grid-template-columns: 1.4fr 1fr; grid-template-rows: auto; align-items: end; }
-.wedding-page .menu-images figure { display: grid; grid-template-rows: auto 48px; gap: 10px; }
+.wedding-page .menu-images figure { display: block; }
 .wedding-page .menu-images img { height: auto; }
 .wedding-page .menu-images figcaption { margin: 0; }
+.wedding-page .menu-heading { display: block; }
+.wedding-page .menu-download { margin: 0 0 28px; }
 .wedding-page .menu-wide, .wedding-page .menu-tall { grid-row: 1; }
 .wedding-page .menu-wide { grid-column: 1; }
 .wedding-page .menu-tall { grid-column: 2; }

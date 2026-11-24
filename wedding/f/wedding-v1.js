@@ -17,7 +17,8 @@
     const link = photos[current];
     image.src = link.href;
     image.alt = link.querySelector('img').alt;
-    caption.textContent = `${current + 1} / ${photos.length} · ${image.alt}`;
+    const venuePhoto = link.closest('.venues-band');
+    caption.textContent = `${current + 1} / ${photos.length}${venuePhoto ? ` · ${image.alt}` : ''}`;
     strip.querySelectorAll('button').forEach((button, index) => {
       if (index === current) button.setAttribute('aria-current', 'true');
       else button.removeAttribute('aria-current');
