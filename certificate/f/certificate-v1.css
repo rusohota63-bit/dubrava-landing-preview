@@ -246,7 +246,7 @@ html.cert-document { scroll-behavior: auto; }
   .cert-types { padding-block: 40px; }
   .cert-types-grid { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 85vw; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; margin-inline: -16px; padding: 0 16px 16px; }
   .cert-types-grid .cert-type { scroll-snap-align: start; }
-  .cert-types-grid .cert-type .cert-paper { width: 100%; position: static; }
+  .cert-types-grid .cert-type .cert-paper { width: 100%; }
   .cert-types-grid .cert-type > h3 { margin-top: 20px; }
   .cert-types-grid .cert-type > p { font-size: 16px; line-height: 1.5; margin: 12px 0 20px; }
   .cert-section { padding-block: 48px; }
