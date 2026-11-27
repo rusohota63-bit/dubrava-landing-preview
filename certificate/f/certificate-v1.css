@@ -97,21 +97,6 @@ html.cert-document { scroll-behavior: auto; }
 @media (max-width: 767px) {
   .certificate-page { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
   .certificate-page .wrap { width: calc(100% - 32px); }
-  .certificate-page .top.site-menu { position: relative; z-index: 6; display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 0 8px; min-height: 72px; padding-block: 8px; }
-  .certificate-page .site-menu > :first-child { justify-self: start; max-width: 100%; }
-  .certificate-page .site-menu > .phone { grid-column: 2; grid-row: 1; margin-left: 0; white-space: nowrap; gap: 0; }
-  .certificate-page .site-menu > .bath-contact-phones > a { min-height: 44px; }
-  .menu-js .certificate-page .site-menu-button { display: inline-flex; grid-column: 3; grid-row: 1; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid #e3decf; border-radius: 8px; background: #fbfaf5; color: #1f2c14; font-weight: 700; }
-  .certificate-page .site-menu > #site-navigation { display: flex; position: static; grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
-  .menu-js .certificate-page .site-menu-button + #site-navigation { position: absolute; inset: 100% 0 auto; padding: 5px 14px; border: 1px solid #e3decf; border-radius: 8px; background: #fbfaf5; box-shadow: var(--cert-shadow-1); }
-  .menu-js .certificate-page .site-menu-button[aria-expanded='false'] + #site-navigation { display: none; }
-  .certificate-page .site-menu #site-navigation a { display: flex; align-items: center; min-height: 44px; font-weight: 650; }
-  .certificate-page .site-menu #site-navigation a + a { border-top: 1px solid #e3decf; }
-  .certificate-page .top-logo img { width: 64px; }
-  .certificate-page .bath-contact-phones small { display: none; }
-  .certificate-page .phone { font-size: 16px; }
-  .certificate-page .site-menu-button { font-size: 16px; padding-inline: 8px; }
-  .certificate-page .site-menu-icon { display: none; }
   .certificate-page .crumbs { font-size: 16px; margin-bottom: 0; padding-block: 0; line-height: 1.5; }
   .cert-hero { grid-template-columns: 1fr; gap: 12px; padding-block: 10px 28px; }
   .certificate-page h1 { font-size: 35px; }
@@ -144,7 +129,23 @@ html.cert-document { scroll-behavior: auto; }
   .cert-sticky-call { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 8px; font-weight: 650; }
   .certificate-page .analytics-consent { bottom: calc(80px + env(safe-area-inset-bottom)); max-height: calc(100dvh - 105px); }
   .certificate-page .analytics-consent-actions { flex-wrap: wrap; }
-  .certificate-page .analytics-consent-actions button { flex: 1 1 120px; }
+  .certificate-page .analytics-consent-actions button { flex: 1 1 120px; }}
+@media (max-width: 710px) {
+.certificate-page .top.site-menu { position: relative; z-index: 6; display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 0 8px; min-height: 72px; padding-block: 8px; }
+.certificate-page .site-menu > :first-child { justify-self: start; max-width: 100%; }
+.certificate-page .site-menu > .phone { grid-column: 2; grid-row: 1; margin-left: 0; white-space: nowrap; gap: 0; }
+.certificate-page .site-menu > .bath-contact-phones > a { min-height: 44px; }
+.menu-js .certificate-page .site-menu-button { display: inline-flex; grid-column: 3; grid-row: 1; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 1px solid #e3decf; border-radius: 8px; background: #fbfaf5; color: #1f2c14; font-weight: 700; }
+.certificate-page .site-menu > #site-navigation { display: flex; position: static; grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
+.menu-js .certificate-page .site-menu-button + #site-navigation { position: absolute; inset: 100% 0 auto; padding: 5px 14px; border: 1px solid #e3decf; border-radius: 8px; background: #fbfaf5; box-shadow: var(--cert-shadow-1); }
+.menu-js .certificate-page .site-menu-button[aria-expanded='false'] + #site-navigation { display: none; }
+.certificate-page .site-menu #site-navigation a { display: flex; align-items: center; min-height: 44px; font-weight: 650; }
+.certificate-page .site-menu #site-navigation a + a { border-top: 1px solid #e3decf; }
+.certificate-page .top-logo img { width: 64px; }
+.certificate-page .bath-contact-phones small { display: none; }
+.certificate-page .phone { font-size: 16px; }
+.certificate-page .site-menu-button { font-size: 16px; padding-inline: 8px; }
+.certificate-page .site-menu-icon { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cert-primary { animation-duration: 5s; }
@@ -300,4 +301,24 @@ html.cert-document { scroll-behavior: auto; }
   .cert-types-grid .cert-type > h3 { margin: 0 0 16px; }
   .cert-types-grid .cert-type > p { margin: 0 0 24px; }
   .cert-use > .wrap { padding-inline: 0; }
+}
+
+/* Certificate card titles: equal size, single line. */
+.cert-type { container-type: inline-size; }
+.certificate-page .cert-types-grid .cert-type > h3 { font-size: clamp(16px,5.8cqw,26px); white-space: nowrap; min-height: 1.2em; text-wrap: nowrap; }
+
+/* Same header rules for a measured overflow above 710px. */
+@media (min-width: 711px) and (max-width: 767px) {
+  html:not(.menu-js) .certificate-page .top.site-menu { position: relative; z-index: 6; display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 0 8px; min-height: 72px; padding-block: 8px; }
+  html:not(.menu-js) .certificate-page .site-menu > :first-child { justify-self: start; max-width: 100%; }
+  html:not(.menu-js) .certificate-page .site-menu > .phone { grid-column: 2; grid-row: 1; margin-left: 0; white-space: nowrap; gap: 0; }
+  html:not(.menu-js) .certificate-page .site-menu > .bath-contact-phones > a { min-height: 44px; }
+  html:not(.menu-js) .certificate-page .site-menu > #site-navigation { display: flex; position: static; grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 0; margin: 0; }
+  html:not(.menu-js) .certificate-page .site-menu #site-navigation a { display: flex; align-items: center; min-height: 44px; font-weight: 650; }
+  html:not(.menu-js) .certificate-page .site-menu #site-navigation a + a { border-top: 1px solid #e3decf; }
+  html:not(.menu-js) .certificate-page .top-logo img { width: 64px; }
+  html:not(.menu-js) .certificate-page .bath-contact-phones small { display: none; }
+  html:not(.menu-js) .certificate-page .phone { font-size: 16px; }
+  html:not(.menu-js) .certificate-page .site-menu-button { font-size: 16px; padding-inline: 8px; }
+  html:not(.menu-js) .certificate-page .site-menu-icon { display: none; }
 }

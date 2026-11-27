@@ -1,22 +1,3 @@
-// This page uses one mobile boundary, including its menu.
-(() => {
-  const button = document.querySelector('.site-menu-button');
-  const navigation = document.getElementById('site-navigation');
-  if (!button || !navigation) return;
-  const mobile = window.matchMedia('(max-width: 767px)');
-  const close = () => button.setAttribute('aria-expanded','false');
-  button.hidden = false;
-  button.addEventListener('click', () => button.setAttribute('aria-expanded',String(button.getAttribute('aria-expanded') !== 'true')));
-  navigation.addEventListener('click', event => {
-    if (mobile.matches && event.target.closest('a')) { button.focus(); close(); }
-  });
-  document.addEventListener('click', event => { if (!button.contains(event.target) && !navigation.contains(event.target)) close(); });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && mobile.matches && button.getAttribute('aria-expanded') === 'true') { button.focus(); close(); }
-  });
-  mobile.addEventListener('change',close);
-})();
-
 (() => {
   'use strict';
   const storageKey = 'dubrava-cert-choice';

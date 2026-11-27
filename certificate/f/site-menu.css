@@ -117,3 +117,89 @@
   body .site-menu > .phone, body .site-menu > .tel { min-width: 0; white-space: nowrap; }
   body .site-menu .site-menu-home { display: none; }
 }
+
+@media (min-width: 711px) {
+  .menu-js:not(.menu-ready):not(.menu-compact) .site-menu > #site-navigation {
+    visibility: hidden;
+    max-height: 32px;
+    overflow: hidden;
+    animation: site-menu-reveal 0s 1.5s forwards;
+  }
+}
+
+@keyframes site-menu-reveal {
+  to { visibility: visible; max-height: 10000px; }
+}
+
+/* Desktop compact mode keeps the ordinary header geometry. */
+@media (min-width: 711px) {
+  html.menu-compact body .site-menu {
+    position: relative;
+    z-index: 6;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    height: var(--site-menu-height);
+    min-height: var(--site-menu-height);
+    align-items: center;
+  }
+  html.menu-compact .site-menu > :first-child { grid-column: 1; grid-row: 1; }
+  html.menu-compact .site-menu > .tel,
+  html.menu-compact .site-menu > .phone { grid-column: 3; grid-row: 1; }
+  html.menu-compact .site-menu-button:not([hidden]) {
+    display: inline-flex;
+    grid-column: 4;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 9px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    color: var(--deep);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  html.menu-compact .site-menu-icon {
+    position: relative;
+    width: 16px;
+    height: 12px;
+    border-block: 2px solid currentColor;
+  }
+  html.menu-compact .site-menu-icon::after {
+    position: absolute;
+    inset: calc(50% - 1px) 0 auto;
+    height: 2px;
+    background: currentColor;
+    content: "";
+  }
+  html.menu-compact body .site-menu > #site-navigation {
+    position: absolute;
+    inset: 100% var(--site-menu-inset, 0px) auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    width: min(100%, 360px);
+    max-height: 70dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    margin: 0;
+    padding: 5px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    box-shadow: 0 8px 24px #1f2c1426;
+  }
+  html.menu-compact .site-menu-button[aria-expanded="false"] + #site-navigation { display: none; }
+  html.menu-compact .site-menu #site-navigation a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 650;
+  }
+  html.menu-compact .site-menu #site-navigation a + a { border-top: 1px solid var(--line); }
+}
