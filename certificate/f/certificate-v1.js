@@ -55,8 +55,8 @@
     document.querySelector('#cert-package-step').hidden = !isPackage;
     document.querySelector('#cert-custom-field').hidden = isPackage || data.amountOption !== 'custom';
     paper.dataset.kind = data.type;
-    image.src = `/assets/certificate-v1/${data.type}-700.webp`;
-    image.srcset = `/assets/certificate-v1/${data.type}-700.webp 700w, /assets/certificate-v1/${data.type}-1200.webp 1200w`;
+    image.src = preview.getAttribute(`data-src-${data.type}`);
+    image.srcset = `${image.src} 700w, ${preview.getAttribute(`data-large-${data.type}`)} 1200w`;
     const name = data.recipient;
     paper.querySelector('.cert-guest').textContent = data.recipient;
     paper.toggleAttribute('data-long-name',data.recipient.length > 17);
@@ -67,6 +67,7 @@
     amountInput.setAttribute('aria-invalid', String(!validAmount()));
     const typeName = {stay: 'Проживание на сумму',restaurant: 'Ресторан',package: 'Пакет'}[data.type];
     paper.setAttribute('aria-label', `${typeName}. ${paper.querySelector('.cert-amount').textContent}. ${name || 'Без имени'}. Номер сертификата: образец. Действует 6 месяцев с даты оплаты.`);
+    document.dispatchEvent(new CustomEvent('certificate:preview', {detail: data}));
   }
   try {
     const saved = JSON.parse(sessionStorage.getItem(storageKey) || 'null');

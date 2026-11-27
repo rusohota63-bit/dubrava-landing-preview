@@ -283,3 +283,21 @@ html.cert-document { scroll-behavior: auto; }
 @media (prefers-reduced-motion: reduce) {
   .cert-photo-grid img { transition: none; }
 }
+
+/* One type scale and heading rhythm across all thirteen sections. */
+.certificate-page h2 { font-size: clamp(32px,3.5vw,49px); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 32px; text-wrap: balance; }
+.certificate-page h3 { font-size: clamp(20px,1.8vw,26px); line-height: 1.2; letter-spacing: -.035em; margin: 0 0 16px; text-wrap: balance; }
+.cert-types-grid { grid-auto-rows: 1fr; }
+.cert-type > .cert-paper { flex: 0 0 auto; margin-bottom: 22px; }
+.cert-type > h3 { margin: 0 0 16px; min-height: 2.4em; }
+.cert-type > p { margin: 0 0 24px; }
+.cert-type > .cert-pick { margin-top: auto; }
+.cert-terms > .wrap { max-width: none; }
+.cert-terms ol { max-width: 76ch; }
+.cert-use > .wrap { padding-inline: 0; }
+@media (max-width: 767px) {
+  .certificate-page h2 { margin-bottom: 28px; }
+  .cert-types-grid .cert-type > h3 { margin: 0 0 16px; }
+  .cert-types-grid .cert-type > p { margin: 0 0 24px; }
+  .cert-use > .wrap { padding-inline: 0; }
+}
